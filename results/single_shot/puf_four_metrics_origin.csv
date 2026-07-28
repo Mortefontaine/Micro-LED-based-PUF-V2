@@ -1,0 +1,5 @@
+metric,value_percent,response_basis,definition
+Reliability,99.7829325274,device-specific frozen 2048 support,100 minus mean probe-to-reference intra-HD
+Uniqueness,53.8614908854,fixed common 8192-projection bank,mean pairwise inter-device HD of enrollment templates
+Uniformity,50.1139322917,device-specific frozen 2048 support,device-balanced mean fraction of ones in enrolled responses
+Bit aliasing,50.1505533854,fixed common 8192-projection bank,mean fraction of devices producing one at each common candidate

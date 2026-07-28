@@ -1,0 +1,68 @@
+{
+  "schema": "microled-puf-security-analysis-r1",
+  "independent_devices": 9,
+  "repeated_frames": 3645,
+  "candidate_bits": 8192,
+  "eligible_candidates": 8192,
+  "data_isolation": "selector reads only the declared enrollment pool; template, balance profile, support, and references use the selected 81 enrollment images; all pool images are excluded from probe and impostor evaluation",
+  "population_balance": {
+    "n": 8192,
+    "mean": 0.5015055338541666,
+    "p95": 0.6666666666666666,
+    "p99": 0.7777777777777778,
+    "max": 0.8888888888888888
+  },
+  "per_bit_min_entropy_descriptive": {
+    "n": 8192,
+    "mean": 0.7744950507143508,
+    "p95": 0.84799690655495,
+    "p99": 0.84799690655495,
+    "max": 0.84799690655495
+  },
+  "fixed_candidate_inter_hd": {
+    "n": 36,
+    "mean": 0.5386149088541666,
+    "p95": 0.6199951171875,
+    "p99": 0.62667236328125,
+    "max": 0.6282958984375,
+    "min": 0.41064453125
+  },
+  "different_device_support_jaccard": {
+    "n": 36,
+    "mean": 0.16065017328423079,
+    "p95": 0.18950020316944333,
+    "p99": 0.20198079149172515,
+    "max": 0.20506031185642837
+  },
+  "digital_enrollment_image_replay": {
+    "accepted": 81,
+    "attempts": 81,
+    "rate": 1.0
+  },
+  "cross_device_impostor": {
+    "accepted": 0,
+    "attempts": 29160,
+    "far": 0.0,
+    "zero_event_95pct_upper_rule_of_three": 0.00010288065843621399,
+    "quality_gate_rejected": 0,
+    "frame_hd": {
+      "n": 29160,
+      "mean": 0.5749009204335991,
+      "p95": 0.7412109375,
+      "p99": 0.77978515625,
+      "max": 0.84814453125
+    }
+  },
+  "helper_budget": {
+    "response_bits": 2048,
+    "syndrome_rank_bits": 1536,
+    "syndrome_coset_dimension_upper_bound": 512,
+    "hmac_check_output_bits": 256,
+    "identity_seed_id_bits": 96
+  },
+  "failure_to_enroll": {
+    "nominal_failures": 0,
+    "devices": 9,
+    "rule": "all nine enrollment frames pass the quality gate and all 2048 selected candidates are unanimous across the 3x3 grid"
+  }
+}

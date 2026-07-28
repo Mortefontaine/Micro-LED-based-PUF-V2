@@ -1,0 +1,43 @@
+{
+  "schema": "microled-puf-roc-eer-r1",
+  "claim_scope": "Descriptive closed-set image-attempt evaluation for M1-M9; repeated frames are correlated and do not constitute independent population samples.",
+  "score_definition": "Raw Hamming distance on the claimed device's frozen 2,048 device-specific positions; accept when HD <= threshold.",
+  "genuine": {
+    "n": 3645,
+    "mean": 0.0021706747256515775,
+    "median": 0.0,
+    "min": 0.0,
+    "p01": 0.0,
+    "p05": 0.0,
+    "p95": 0.0107421875,
+    "p99": 0.04150390625,
+    "max": 0.16552734375
+  },
+  "impostor": {
+    "n": 29160,
+    "mean": 0.5749009204335991,
+    "median": 0.5703125,
+    "min": 0.271484375,
+    "p01": 0.3352490234375,
+    "p05": 0.38916015625,
+    "p95": 0.7412109375,
+    "p99": 0.77978515625,
+    "max": 0.84814453125
+  },
+  "auc": 1.0,
+  "eer": 0.0,
+  "eer_threshold_hd_fraction": 0.218505859375,
+  "eer_threshold_hd_percent": 21.8505859375,
+  "perfect_empirical_separation": true,
+  "zero_error_threshold_interval_hd_fraction": [
+    0.16552734375,
+    0.271484375
+  ],
+  "zero_error_threshold_interval_hd_percent": [
+    16.552734375,
+    27.1484375
+  ],
+  "maximum_genuine_hd_fraction": 0.16552734375,
+  "minimum_impostor_hd_fraction": 0.271484375,
+  "score_gap_hd_fraction": 0.10595703125
+}

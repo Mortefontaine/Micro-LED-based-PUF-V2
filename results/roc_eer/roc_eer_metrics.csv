@@ -1,0 +1,7 @@
+﻿metric,value,unit
+AUC,1.0,
+EER,0.0,fraction
+EER_threshold,21.8505859375,% raw HD
+maximum_genuine_HD,16.552734375,% raw HD
+minimum_impostor_HD,27.1484375,% raw HD
+empirical_score_gap,10.595703125,percentage points

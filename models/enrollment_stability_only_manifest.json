@@ -1,0 +1,4274 @@
+{
+  "schema": "microled-puf-enrollment-split-r1",
+  "created_utc": "2026-07-27T07:28:49.117439+00:00",
+  "selection_rule": "predeclare the first naturally-sorted images in each condition as an enrollment-only pool; select the first pool image passing correlation against the pool-only preliminary template",
+  "selection_mode": "first_passing",
+  "selection_json": "",
+  "role_manifest": "",
+  "input_root_name": "aligned_all9_new_stn_public",
+  "devices": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9"
+  ],
+  "enrollment_images": 81,
+  "enrollment_entries": [
+    {
+      "device": "M1",
+      "condition": "M1_10mA_20C_0",
+      "relative_path": "M1_10mA_20C_0/frame_0003.png",
+      "sha256": "348c0bba134a798240fc6482bf339b8fc41b7d461d5f3c4a700e108008c397f8",
+      "quality_template_corr": 0.8115113973617554
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_30C_0",
+      "relative_path": "M1_10mA_30C_0/frame_0003.png",
+      "sha256": "14fb2f6e4f577b8562a9fb828b71417242d8826a8653f907939d6eaa00f9461f",
+      "quality_template_corr": 0.8325487971305847
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_40C_0",
+      "relative_path": "M1_10mA_40C_0/frame_0005.png",
+      "sha256": "07436a0ce87852a1b6417c48681b588bb6c17dc476f52d54722da56c116cd135",
+      "quality_template_corr": 0.8251523971557617
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_20C_0",
+      "relative_path": "M1_20mA_20C_0/frame_0003.png",
+      "sha256": "6711cd31c6895160a49b036cf16f13092fa3f0a5de347057127ccc3e04164c12",
+      "quality_template_corr": 0.8264878392219543
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_30C_0",
+      "relative_path": "M1_20mA_30C_0/frame_0005.png",
+      "sha256": "25b18033b6009d716ae9bd80aec947ceb0015faef10f99d69bf7d025998ba36c",
+      "quality_template_corr": 0.8171722888946533
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_40C_0",
+      "relative_path": "M1_20mA_40C_0/frame_0002.png",
+      "sha256": "de4723957b76b85a0e97656ab2d342a587638522045b7ab1c054c4ee63ee499f",
+      "quality_template_corr": 0.8243582844734192
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_20C_0",
+      "relative_path": "M1_30mA_20C_0/frame_0001.png",
+      "sha256": "6eff7a55f41be04d2938a97cb036805a27c5fed6caaec22671a3e0a1f657056b",
+      "quality_template_corr": 0.8175696730613708
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_30C_0",
+      "relative_path": "M1_30mA_30C_0/frame_0008.png",
+      "sha256": "444b237be4c2589a4212c6b62d3db726347c92ab48d55a130a7128dcb635b535",
+      "quality_template_corr": 0.8129128813743591
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_40C_0",
+      "relative_path": "M1_30mA_40C_0/frame_0015.png",
+      "sha256": "b800154e2a3a4ef30a3a6606b8a4f64e847d2062f63999afdc53a9303cfcc23d",
+      "quality_template_corr": 0.8219999074935913
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_20C_0",
+      "relative_path": "M2_10mA_20C_0/frame_0004.png",
+      "sha256": "68808c9e0329d72f46ec694d7ca4fe8c526c0b02085f1a0824e5d6a04c65a736",
+      "quality_template_corr": 0.8193935751914978
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_30C_0",
+      "relative_path": "M2_10mA_30C_0/frame_0001.png",
+      "sha256": "cc1928812b0690d6967c7d37e1f3d9e6a8f52cdb4dd8faacf679725a4f40e983",
+      "quality_template_corr": 0.5248820781707764
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_40C_0",
+      "relative_path": "M2_10mA_40C_0/frame_0001.png",
+      "sha256": "c7230b18b7876cc7e656dfc8d5ab76c1a7ff1765d44b9df9889bca6be8a1a8a6",
+      "quality_template_corr": 0.5536451935768127
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_20C_0",
+      "relative_path": "M2_20mA_20C_0/frame_0013.png",
+      "sha256": "f9c80b40ba98b21959b889a35b1b5741b9b9181b250e875ee6d9221bc6c6dfcc",
+      "quality_template_corr": 0.7718408107757568
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_30C_0",
+      "relative_path": "M2_20mA_30C_0/frame_0003.png",
+      "sha256": "9baeb2a8e977d4e726458418a6396a240bdcdab5aff251fa94793ca4665b24e3",
+      "quality_template_corr": 0.6104022860527039
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_40C_0",
+      "relative_path": "M2_20mA_40C_0/frame_0002.png",
+      "sha256": "43b7affba942fee04ce66602d58c09d42fdfca6d97c1cd4ad05649113aae79a3",
+      "quality_template_corr": 0.571452796459198
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_20C_0",
+      "relative_path": "M2_30mA_20C_0/frame_0001.png",
+      "sha256": "0cadc0ae22fe2d35d1f700f4d836b3138ab4256b9fbbd865a03693f829853412",
+      "quality_template_corr": 0.6687787771224976
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_30C_0",
+      "relative_path": "M2_30mA_30C_0/frame_0001.png",
+      "sha256": "35ba86311c2f492de68cf82dbae8ac578d2ecc88c317b1121963361d12bf1226",
+      "quality_template_corr": 0.6507448554039001
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_40C_0",
+      "relative_path": "M2_30mA_40C_0/frame_0015.png",
+      "sha256": "5aa52b49b953d76190900624c77fbf06df70a6fb360f6275766f892bcd7f349c",
+      "quality_template_corr": 0.6068331599235535
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_20C_0",
+      "relative_path": "M3_10mA_20C_0/frame_0004.png",
+      "sha256": "05640822915a176ab775de5651dc713adf2ba7fce9e5fe6d0403045b4cd0437c",
+      "quality_template_corr": 0.7097091674804688
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_30C_0",
+      "relative_path": "M3_10mA_30C_0/frame_0007.png",
+      "sha256": "5397b90a22a3b50d591738fac679721421706b29daeb54f2d3b5cff9de96907f",
+      "quality_template_corr": 0.7255067229270935
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_40C_0",
+      "relative_path": "M3_10mA_40C_0/frame_0001.png",
+      "sha256": "8a1c4c2f258a36298e61f89984d3b5f091771a47951bc918a6ea2f2c148902c5",
+      "quality_template_corr": 0.7495717406272888
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_20C_0",
+      "relative_path": "M3_20mA_20C_0/frame_0005.png",
+      "sha256": "5dbbe689947771d74116a3da75518ce569ea51c88ee6dd580b10c5d80ab3f48b",
+      "quality_template_corr": 0.7557027339935303
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_30C_0",
+      "relative_path": "M3_20mA_30C_0/frame_0001.png",
+      "sha256": "ee80c0069f80e8f0f9d5daa4f6ae3510d705b1a3f84573c4f65e12a269719010",
+      "quality_template_corr": 0.7494899034500122
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_40C_0",
+      "relative_path": "M3_20mA_40C_0/frame_0001.png",
+      "sha256": "3badcebd9d0a747b050f61b72af013a9ad34140cd5fe2b8caf50449fc9be732e",
+      "quality_template_corr": 0.7474071383476257
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_20C_0",
+      "relative_path": "M3_30mA_20C_0/frame_0001.png",
+      "sha256": "bab568ec51522eef5cacf807dab1686a498e60adeb365aad349b40e25cbef49e",
+      "quality_template_corr": 0.7031285166740417
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_30C_0",
+      "relative_path": "M3_30mA_30C_0/frame_0004.png",
+      "sha256": "0dfcad936002f0a1aa2542eda6e4b5e9d5a439e46d5409db82bf298169913b9d",
+      "quality_template_corr": 0.7294365763664246
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_40C_0",
+      "relative_path": "M3_30mA_40C_0/frame_0003.png",
+      "sha256": "ee757f6a122cadcc0ab278aec7d3c2b0594efd1ae4f15fbd9300350c0295bf67",
+      "quality_template_corr": 0.7212980389595032
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_20C_0",
+      "relative_path": "M4_10mA_20C_0/frame_0001.png",
+      "sha256": "5dd1f55ee32f83de14b480fb3d78b5a4931044af4a1d3345efdae2e234f72b03",
+      "quality_template_corr": 0.7163897752761841
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_30C_0",
+      "relative_path": "M4_10mA_30C_0/frame_0001.png",
+      "sha256": "69789113c301aeb6bd642bf5e33af7e01df496d329c511b60dd28664f09e9caf",
+      "quality_template_corr": 0.6950250864028931
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_40C_0",
+      "relative_path": "M4_10mA_40C_0/frame_0002.png",
+      "sha256": "87bdde31fcfc10234e32c717f4116a3bc5ed3809aea2d46bc451e27690bf53bc",
+      "quality_template_corr": 0.6957547068595886
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_20C_0",
+      "relative_path": "M4_20mA_20C_0/frame_0004.png",
+      "sha256": "c1985bc1b920f660fca8deccabeda211f9964aa8ed269e26f114791b4ff5fa15",
+      "quality_template_corr": 0.7363351583480835
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_30C_0",
+      "relative_path": "M4_20mA_30C_0/frame_0003.png",
+      "sha256": "476b558b1d8ff58f2b631e31a57eabbacffee2c35ed5c0d568a9357d213948d6",
+      "quality_template_corr": 0.7159287333488464
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_40C_0",
+      "relative_path": "M4_20mA_40C_0/frame_0006.png",
+      "sha256": "3a3a9627fe682c8374999a781794afff88815355316ee2d5a9d5cb6e7ab97a81",
+      "quality_template_corr": 0.7269472479820251
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_20C_0",
+      "relative_path": "M4_30mA_20C_0/frame_0003.png",
+      "sha256": "dc58b9ec44d43b7437dfdc0c8a6c7a4b4e8b23bc2bd9a5470903f3f4b121fbbf",
+      "quality_template_corr": 0.7503368854522705
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_30C_0",
+      "relative_path": "M4_30mA_30C_0/frame_0005.png",
+      "sha256": "05be21517f00460a4d84915bcff919e7b1927717b2a0f48a4fcf974da2303c30",
+      "quality_template_corr": 0.6953275799751282
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_40C_0",
+      "relative_path": "M4_30mA_40C_0/frame_0008.png",
+      "sha256": "ef702e9e87318ec4ea7f39245f3fee660d93aabec7111fd75b351e8fbf6c3484",
+      "quality_template_corr": 0.690463125705719
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_20C_0",
+      "relative_path": "M5_10mA_20C_0/frame_0002.png",
+      "sha256": "13062c4aa9bc5c49b4d4877928ebee8e50740792439a66221770c71ecd18c60f",
+      "quality_template_corr": 0.8253908157348633
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_30C_0",
+      "relative_path": "M5_10mA_30C_0/frame_0004.png",
+      "sha256": "fbf087ec925ed1bb6c5ca11a494a3e8bac9c2d8de8b304590c689119e6520b88",
+      "quality_template_corr": 0.7417736649513245
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_40C_0",
+      "relative_path": "M5_10mA_40C_0/frame_0011.png",
+      "sha256": "070c088232fa7289d66c92d61258d9ccd7ddb08f959e460e8ad42c8aec611a48",
+      "quality_template_corr": 0.7118982076644897
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_20C_0",
+      "relative_path": "M5_20mA_20C_0/frame_0007.png",
+      "sha256": "d2c08d13907ac302ed3767be062b69d3972aaba1336fb4a190275a652283081c",
+      "quality_template_corr": 0.8082223534584045
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_30C_0",
+      "relative_path": "M5_20mA_30C_0/frame_0005.png",
+      "sha256": "41c62199506d0b9774ef04145e9b262e8a7fa0784e788295ad3a537d3c9cffc1",
+      "quality_template_corr": 0.7638031840324402
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_40C_0",
+      "relative_path": "M5_20mA_40C_0/frame_0007.png",
+      "sha256": "acb872ef763d281fbcf685168ac63056b332b68bf6b085977c6326444cd44e2a",
+      "quality_template_corr": 0.744260847568512
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_20C_0",
+      "relative_path": "M5_30mA_20C_0/frame_0007.png",
+      "sha256": "c16de2d099624ab0731236e9a111b6537e362e1b7efcb74440401dbb438b212d",
+      "quality_template_corr": 0.7957532405853271
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_30C_0",
+      "relative_path": "M5_30mA_30C_0/frame_0003.png",
+      "sha256": "ad98a40f8af8ff0d997be0510ddd9f99320810c407332df511dc4e60378381d8",
+      "quality_template_corr": 0.7832034826278687
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_40C_0",
+      "relative_path": "M5_30mA_40C_0/frame_0002.png",
+      "sha256": "cc6f2fdb8530a34954cc2c1162652be0db80ebeca18c161bc7557062cc8e64f5",
+      "quality_template_corr": 0.7499040365219116
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_20C_0",
+      "relative_path": "M6_10mA_20C_0/frame_0001.png",
+      "sha256": "cc42fc89689aed631cd7a964f146f02ce1aa985d6b3c1af9ab23a4fbfa7d13e6",
+      "quality_template_corr": 0.6853119134902954
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_30C_0",
+      "relative_path": "M6_10mA_30C_0/frame_0004.png",
+      "sha256": "e4a5ab55261d7e730e5725f9fed6e34540b8e809a8f3dc8d8fa4aacea2830522",
+      "quality_template_corr": 0.6667131781578064
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_40C_0",
+      "relative_path": "M6_10mA_40C_0/frame_0004.png",
+      "sha256": "a112aa963db3b4ae46caa895a7753e49faf310e9cc9bc33f20457d2dd4d897ed",
+      "quality_template_corr": 0.7287768721580505
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_20C_0",
+      "relative_path": "M6_20mA_20C_0/frame_0005.png",
+      "sha256": "055f8ecd319afc801a48b411385d1409a29dba6c426ea17b8854bf770e1fd1cc",
+      "quality_template_corr": 0.6964742541313171
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_30C_0",
+      "relative_path": "M6_20mA_30C_0/frame_0001.png",
+      "sha256": "e2c7f7cac8f187c218a910a54a064d107437d6fa573f64203a74d0fc447ff418",
+      "quality_template_corr": 0.7010409832000732
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_40C_0",
+      "relative_path": "M6_20mA_40C_0/frame_0001.png",
+      "sha256": "bd1e06f9e9c8e497cd767f27d6fd1621ba910a6551fd49aa1429520d2ac3a216",
+      "quality_template_corr": 0.7097012996673584
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_20C_0",
+      "relative_path": "M6_30mA_20C_0/frame_0006.png",
+      "sha256": "6656a77bec99d3b63866744492bd03ff65fddbb3575c31b5d46da9ccc34278c2",
+      "quality_template_corr": 0.6870042681694031
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_30C_0",
+      "relative_path": "M6_30mA_30C_0/frame_0007.png",
+      "sha256": "578ebd9eab1c9a131046cd7d836b25948e263a8148f86ac994e2ebc4189c0e0b",
+      "quality_template_corr": 0.72477787733078
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_40C_0",
+      "relative_path": "M6_30mA_40C_0/frame_0013.png",
+      "sha256": "1d80ec2f1f1eb4ab0575194c2505251082a65bb2cec2271c1ca63a1b7b54c95b",
+      "quality_template_corr": 0.7652226686477661
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_20C_0",
+      "relative_path": "M7_10mA_20C_0/frame_0001.png",
+      "sha256": "624a33e590fadc70970fedc3228f3da150c41eeae6bfbde8ee350579cf88f226",
+      "quality_template_corr": 0.6963611245155334
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_30C_0",
+      "relative_path": "M7_10mA_30C_0/frame_0001.png",
+      "sha256": "f8ac85bcb9a25747e92826a242978846019ce741eb796af172b177a74da91533",
+      "quality_template_corr": 0.7584606409072876
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_40C_0",
+      "relative_path": "M7_10mA_40C_0/frame_0001.png",
+      "sha256": "3c2e63057673421c7b44d4a1bf6c464847da38f8f8638d22819a5a22735258f3",
+      "quality_template_corr": 0.7632583379745483
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_20C_0",
+      "relative_path": "M7_20mA_20C_0/frame_0001.png",
+      "sha256": "dbbebe7d189568037183cc5c5d2df500030bdf55453bb63f29d62286ab5de267",
+      "quality_template_corr": 0.7795215845108032
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_30C_0",
+      "relative_path": "M7_20mA_30C_0/frame_0003.png",
+      "sha256": "101f64717828256a23cd8792bd14e5b69fbad67fc78dd0d0c908e77f9c240348",
+      "quality_template_corr": 0.7718746066093445
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_40C_0",
+      "relative_path": "M7_20mA_40C_0/frame_0001.png",
+      "sha256": "5f2c659cd0148935640c1aabb8034b799b0e914af93bcfe6d33fd6828ba32a42",
+      "quality_template_corr": 0.7552563548088074
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_20C_0",
+      "relative_path": "M7_30mA_20C_0/frame_0001.png",
+      "sha256": "be60befd64f11dc92b6a96838b8cccb39d2a06da487becba1a9cbe556567f8df",
+      "quality_template_corr": 0.7624369859695435
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_30C_0",
+      "relative_path": "M7_30mA_30C_0/frame_0002.png",
+      "sha256": "a3f8f18faffd68ff0a16a0ad06457d3ffc7ea11e78bd5f1457ee3ba10fa638f2",
+      "quality_template_corr": 0.7895306348800659
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_40C_0",
+      "relative_path": "M7_30mA_40C_0/frame_0004.png",
+      "sha256": "bb28dae7b64b39d99710c2e7d8034a943f82a8749cd42aef0521be0ef3c949aa",
+      "quality_template_corr": 0.7800652980804443
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_20C_0",
+      "relative_path": "M8_10mA_20C_0/frame_0004.png",
+      "sha256": "2f6425047cd8bdc4bbae332602f5615e21ee6c93d45516340d8196f10634da6a",
+      "quality_template_corr": 0.7221277356147766
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_30C_0",
+      "relative_path": "M8_10mA_30C_0/frame_0007.png",
+      "sha256": "331c43c5e2924095985a669ce7cf97e682ef61d36ef46ca660b092f4cbacff29",
+      "quality_template_corr": 0.7395209074020386
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_40C_0",
+      "relative_path": "M8_10mA_40C_0/frame_0004.png",
+      "sha256": "0603a2cea0c81a01d442dd6fdc2881a4e309876d22c2b84daa0a91dab29c76f1",
+      "quality_template_corr": 0.7497187256813049
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_20C_0",
+      "relative_path": "M8_20mA_20C_0/frame_0001.png",
+      "sha256": "de349e0249579975a416fbf5053508422c2610f129c0818f765a9bd9f3e39960",
+      "quality_template_corr": 0.6898826956748962
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_30C_0",
+      "relative_path": "M8_20mA_30C_0/frame_0017.png",
+      "sha256": "cd1525cb08bf638e576b5c0c5117267fa956d122df3be10a728743ac791c9479",
+      "quality_template_corr": 0.7705186605453491
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_40C_0",
+      "relative_path": "M8_20mA_40C_0/frame_0001.png",
+      "sha256": "5494cb19b51b44d50b784639eae2789d67996b950f76a7dd4f987eca9d89cdbb",
+      "quality_template_corr": 0.7465697526931763
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_20C_0",
+      "relative_path": "M8_30mA_20C_0/frame_0009.png",
+      "sha256": "5f1cc837a587301d21048632867bc75b0be38c2c24df21b7748851f8b0c84c84",
+      "quality_template_corr": 0.7529792189598083
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_30C_0",
+      "relative_path": "M8_30mA_30C_0/frame_0002.png",
+      "sha256": "59dcbdda0ee876117ed1281446f225c420e82b8b7b45c0dc42c7dd464a291068",
+      "quality_template_corr": 0.7413134574890137
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_40C_0",
+      "relative_path": "M8_30mA_40C_0/frame_0002.png",
+      "sha256": "0c6c73978fb2d98f6be971512e0989f5567ad74251d635e8be26360d259baf5a",
+      "quality_template_corr": 0.7648410201072693
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_20C_0",
+      "relative_path": "M9_10mA_20C_0/frame_0004.png",
+      "sha256": "16fca55611b24f6674b739168955b44b2e9c5018e1f5ab2f67d4b88d2a97d90f",
+      "quality_template_corr": 0.8509282469749451
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_30C_0",
+      "relative_path": "M9_10mA_30C_0/frame_0005.png",
+      "sha256": "6b9ffb5112604b2ed3ae75f39c2936aabac04ec744cc285b0ef39140654312cf",
+      "quality_template_corr": 0.7525029182434082
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_40C_0",
+      "relative_path": "M9_10mA_40C_0/frame_0001.png",
+      "sha256": "8d12ebd1427bb8c05fb178d9437c275a1fb59a68d82ec9907109c181c68ce8e4",
+      "quality_template_corr": 0.7530229091644287
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_20C_0",
+      "relative_path": "M9_20mA_20C_0/frame_0005.png",
+      "sha256": "122b39aa930ff1a9154b6ba60456cdfc60914946d8723323ef38f385b8a9a15f",
+      "quality_template_corr": 0.8471311330795288
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_30C_0",
+      "relative_path": "M9_20mA_30C_0/frame_0005.png",
+      "sha256": "360f0fab5ced6442edaebbc355b2e9c838ed92f96cdfa92905cc2d04150954a0",
+      "quality_template_corr": 0.7507255673408508
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_40C_0",
+      "relative_path": "M9_20mA_40C_0/frame_0003.png",
+      "sha256": "f5f83dc4b5ed006a7c67b20aadf8d49caf5b071087146202093e22d9bff7bcb6",
+      "quality_template_corr": 0.7834213972091675
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_20C_0",
+      "relative_path": "M9_30mA_20C_0/frame_0002.png",
+      "sha256": "152204b8c5a7d9c19bd001a3d2e167d042dd5c7ffa9fa18357e4ed7355d28bc3",
+      "quality_template_corr": 0.7965160608291626
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_30C_0",
+      "relative_path": "M9_30mA_30C_0/frame_0002.png",
+      "sha256": "988d3c24ad49f57a799bee0385c5b45f9da4d85d312059ce50b1b27be7dbe2d7",
+      "quality_template_corr": 0.7872552275657654
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_40C_0",
+      "relative_path": "M9_30mA_40C_0/frame_0001.png",
+      "sha256": "ade1813a1cd65081508f454d0aa2b21a7ef0d2402921bfcaa0d275a31c7b30ee",
+      "quality_template_corr": 0.7912182211875916
+    }
+  ],
+  "enrollment_pool_per_condition": 5,
+  "enrollment_pool_images": 405,
+  "enrollment_pool_entries": [
+    {
+      "device": "M1",
+      "condition": "M1_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_10mA_20C_0/frame_0003.png",
+      "sha256": "348c0bba134a798240fc6482bf339b8fc41b7d461d5f3c4a700e108008c397f8",
+      "pool_template_corr": 0.8083387017250061
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_10mA_20C_0/frame_0007.png",
+      "sha256": "9637236fc9c3f7f255bd3c1870e9ec3d0124ebc88d561018dfd04d2885bec206",
+      "pool_template_corr": 0.7897800207138062
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_10mA_20C_0/frame_0009.png",
+      "sha256": "5a4d3906b745f614a01c3e65ded7a160c2ba74d522b115c163fa5437d8a52cb9",
+      "pool_template_corr": 0.7602896094322205
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_10mA_20C_0/frame_0013.png",
+      "sha256": "ae7a2c2998adc18846a2aeaaa34a8c8f562df893af0998a5eb7bb2f53e9a729e",
+      "pool_template_corr": 0.8006759881973267
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_10mA_20C_0/frame_0021.png",
+      "sha256": "0f679b44d04fcb88a52e3db90c6543cc996dd12708444cb38ab56a7c87ff877a",
+      "pool_template_corr": 0.7802765369415283
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_10mA_30C_0/frame_0003.png",
+      "sha256": "14fb2f6e4f577b8562a9fb828b71417242d8826a8653f907939d6eaa00f9461f",
+      "pool_template_corr": 0.8295732140541077
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_10mA_30C_0/frame_0010.png",
+      "sha256": "7856b6063a05535da96d8a20e3abd4d3b1d25e651825ed14ee783cdec20d7e4e",
+      "pool_template_corr": 0.8384531736373901
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_10mA_30C_0/frame_0015.png",
+      "sha256": "1169c13bd9d521021a2e4df3a3851d23c5158476d5702d201fe097d9c7350e29",
+      "pool_template_corr": 0.8115596175193787
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_10mA_30C_0/frame_0021.png",
+      "sha256": "33e384b2ae707c973b4b34afc136b8ef665d6135bf96c83bce2cb42a134addb5",
+      "pool_template_corr": 0.814795732498169
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_10mA_30C_0/frame_0024.png",
+      "sha256": "ccf2038d3f25064785257955fb47625ac6d2e35ac67e3644f2f6e87f20e2d1c6",
+      "pool_template_corr": 0.8197964429855347
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_10mA_40C_0/frame_0005.png",
+      "sha256": "07436a0ce87852a1b6417c48681b588bb6c17dc476f52d54722da56c116cd135",
+      "pool_template_corr": 0.8226023316383362
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_10mA_40C_0/frame_0007.png",
+      "sha256": "9ae09def607b9472a9ae3f33b9c6a028e163b87849b605e1dd5dc039211f301d",
+      "pool_template_corr": 0.8230592608451843
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_10mA_40C_0/frame_0019.png",
+      "sha256": "e425a2d5dbe3fa9ae8909caec60dc74ef563bd83f0a4fb0daaa1551796830195",
+      "pool_template_corr": 0.8198961615562439
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_10mA_40C_0/frame_0022.png",
+      "sha256": "e339e058453b84d22ec46e7ea8061d3b1e85159d5d8f7a11ed832e9192f1942e",
+      "pool_template_corr": 0.7777552604675293
+    },
+    {
+      "device": "M1",
+      "condition": "M1_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_10mA_40C_0/frame_0029.png",
+      "sha256": "c282d2f258c2dd9f2547ec443c9dd94645c7bebce54951d5eaf12e5ed7122ee1",
+      "pool_template_corr": 0.7678796648979187
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_20mA_20C_0/frame_0003.png",
+      "sha256": "6711cd31c6895160a49b036cf16f13092fa3f0a5de347057127ccc3e04164c12",
+      "pool_template_corr": 0.8214101195335388
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_20mA_20C_0/frame_0011.png",
+      "sha256": "2d6d1f419ca5e00329248e9a4ba02dd9387510bcdc448dcaa7b1ce36ff1bd196",
+      "pool_template_corr": 0.7909122109413147
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_20mA_20C_0/frame_0012.png",
+      "sha256": "25141696c2fbbe5c2c90870eaee6356e4456ba3f9bc7fcf196083d807f42c904",
+      "pool_template_corr": 0.7903030514717102
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_20mA_20C_0/frame_0015.png",
+      "sha256": "c0f5e1510f972c441878916c6ecc8b9a9b3ee34aad301e154eed6355272579ff",
+      "pool_template_corr": 0.8056874871253967
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_20mA_20C_0/frame_0025.png",
+      "sha256": "edd182c544aed18065a5aeae0d94f85f6a0e990338a6e3193e59d78c66492624",
+      "pool_template_corr": 0.7782089710235596
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_20mA_30C_0/frame_0005.png",
+      "sha256": "25b18033b6009d716ae9bd80aec947ceb0015faef10f99d69bf7d025998ba36c",
+      "pool_template_corr": 0.8119922280311584
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_20mA_30C_0/frame_0006.png",
+      "sha256": "a7ba5fa4c3c61381c50ee0b98f6d416b1ccd312e12cc23b72072cc47a81dc3ab",
+      "pool_template_corr": 0.781409502029419
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_20mA_30C_0/frame_0009.png",
+      "sha256": "6dba889cfd2af78629fd4f7b6dbc1d1b8ec03a5142741c0a29f09f91a138dd38",
+      "pool_template_corr": 0.7656843662261963
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_20mA_30C_0/frame_0015.png",
+      "sha256": "d536e96c4740067c6401afeae28fb0f06d0cb9f01834913423dca80a34f84f78",
+      "pool_template_corr": 0.8171814680099487
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_20mA_30C_0/frame_0016.png",
+      "sha256": "77b3a689ee8ecaa19a7d145195312225d3768e2c6c4d208130cc104df7dc8da6",
+      "pool_template_corr": 0.8222512602806091
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_20mA_40C_0/frame_0002.png",
+      "sha256": "de4723957b76b85a0e97656ab2d342a587638522045b7ab1c054c4ee63ee499f",
+      "pool_template_corr": 0.8209924697875977
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_20mA_40C_0/frame_0003.png",
+      "sha256": "70ac12c63eb03a9aa87cefbaeb6e646487eb7753fe2fc7992a7deca61b7419c4",
+      "pool_template_corr": 0.7819182872772217
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_20mA_40C_0/frame_0004.png",
+      "sha256": "af535b07eb1d15fd01838d5af6ed2bae73f684d5d1288a0244ad038a95f84683",
+      "pool_template_corr": 0.7998641729354858
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_20mA_40C_0/frame_0012.png",
+      "sha256": "3a143d1c7220533d43d49c466e524ab93b7f88ae37fe0b8c56afa38615757feb",
+      "pool_template_corr": 0.8261511921882629
+    },
+    {
+      "device": "M1",
+      "condition": "M1_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_20mA_40C_0/frame_0013.png",
+      "sha256": "c38091a41ddfe406b31b872d6fca904b2be63409166888fd17195a45da86a94c",
+      "pool_template_corr": 0.8102970123291016
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_30mA_20C_0/frame_0001.png",
+      "sha256": "6eff7a55f41be04d2938a97cb036805a27c5fed6caaec22671a3e0a1f657056b",
+      "pool_template_corr": 0.8132215142250061
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_30mA_20C_0/frame_0007.png",
+      "sha256": "6a755de42a14aab0c8d97f53e1442b0959736a7152c57d519813908cb01615b1",
+      "pool_template_corr": 0.7760919332504272
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_30mA_20C_0/frame_0008.png",
+      "sha256": "0115e124b8dfb9bbabc8840474d7808c2753b7435df7660353694d6529ef4337",
+      "pool_template_corr": 0.7510455846786499
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_30mA_20C_0/frame_0014.png",
+      "sha256": "8c813da369d195365a4f5e052d736df8d81b3bfff1ffa6c9fdaa67892af89dba",
+      "pool_template_corr": 0.7981783151626587
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_30mA_20C_0/frame_0022.png",
+      "sha256": "9f1eb39617e78731680bceb947dfa1a1a6a9dfa14cc37381e399e1a7c218a128",
+      "pool_template_corr": 0.8037289381027222
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_30mA_30C_0/frame_0008.png",
+      "sha256": "444b237be4c2589a4212c6b62d3db726347c92ab48d55a130a7128dcb635b535",
+      "pool_template_corr": 0.8085274696350098
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_30mA_30C_0/frame_0010.png",
+      "sha256": "a88fb045f92212f33857022d34784bf16106115d0704e126246f93732337776c",
+      "pool_template_corr": 0.8131082057952881
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_30mA_30C_0/frame_0012.png",
+      "sha256": "c10554ac4429f0f342345101303fb82e453944af5133f9da5d2747db21021a94",
+      "pool_template_corr": 0.8387339115142822
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_30mA_30C_0/frame_0017.png",
+      "sha256": "930a438488086f7a2b68f8acc2ed2d57f84676a700fa3a98f6866eaf6b9dd51b",
+      "pool_template_corr": 0.8059535026550293
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_30mA_30C_0/frame_0018.png",
+      "sha256": "bd3bdff2f0360ce1dc7038088444fcc4a5d55a6e08d6271a3d47f3a50b5c6a49",
+      "pool_template_corr": 0.8076528906822205
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M1_30mA_40C_0/frame_0015.png",
+      "sha256": "b800154e2a3a4ef30a3a6606b8a4f64e847d2062f63999afdc53a9303cfcc23d",
+      "pool_template_corr": 0.8170453310012817
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M1_30mA_40C_0/frame_0022.png",
+      "sha256": "7a6804c7bacc9ca7dda485aa0230a31f05782ede818f99615e651c00a6b6deb9",
+      "pool_template_corr": 0.8169811367988586
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M1_30mA_40C_0/frame_0023.png",
+      "sha256": "647d0fc5e268bab1c47ab08fc4775026402e06247cdc84f3716d011e5bbc408f",
+      "pool_template_corr": 0.7859700918197632
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M1_30mA_40C_0/frame_0029.png",
+      "sha256": "691a3ff9a02c64bf7da680da405062918619a01c5191bb262ddaf9281b9ebb49",
+      "pool_template_corr": 0.7856144309043884
+    },
+    {
+      "device": "M1",
+      "condition": "M1_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M1_30mA_40C_0/frame_0032.png",
+      "sha256": "4ee81b2dc98d934b3c74fd803136c3477771fea2880f7339cc78148dd0a31760",
+      "pool_template_corr": 0.759493350982666
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_10mA_20C_0/frame_0004.png",
+      "sha256": "68808c9e0329d72f46ec694d7ca4fe8c526c0b02085f1a0824e5d6a04c65a736",
+      "pool_template_corr": 0.8236492872238159
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_10mA_20C_0/frame_0007.png",
+      "sha256": "4393cc75614416d140e51a1c9bbed8300b9b8ebac155f4de7db71a11bb3cc97c",
+      "pool_template_corr": 0.8257933259010315
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_10mA_20C_0/frame_0009.png",
+      "sha256": "4c5be54bded5d82bd936f547be445438ec295f4bebb03bc54f8d26dd24692b7e",
+      "pool_template_corr": 0.8205100893974304
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_10mA_20C_0/frame_0014.png",
+      "sha256": "23b98ab1c6bc62f4fefd5f0bc9b71a8ef0f42c7b134dd78452928134cffd87ad",
+      "pool_template_corr": 0.8346012234687805
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_10mA_20C_0/frame_0019.png",
+      "sha256": "11dc922674139c27156fac227afdeae8aca71063ac3164525b13bf25c0831717",
+      "pool_template_corr": 0.8113430142402649
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_10mA_30C_0/frame_0001.png",
+      "sha256": "cc1928812b0690d6967c7d37e1f3d9e6a8f52cdb4dd8faacf679725a4f40e983",
+      "pool_template_corr": 0.5318325161933899
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_10mA_30C_0/frame_0002.png",
+      "sha256": "01c97b3d495e88387bffbfffe7bdbe8f25d6fc24581c36d30c767bec73f7570d",
+      "pool_template_corr": 0.5804705619812012
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_10mA_30C_0/frame_0008.png",
+      "sha256": "d775f0f99b9b3cfe8e30726734adeeff4fd1b6bf632142179207feff4f11423f",
+      "pool_template_corr": 0.5520942211151123
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_10mA_30C_0/frame_0023.png",
+      "sha256": "609b6fdc3621d0ba8cd0cf9e9c19180fd015eaf1214028f7fd2998f953088342",
+      "pool_template_corr": 0.5102458596229553
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_10mA_30C_0/frame_0025.png",
+      "sha256": "2f8afcf0ba53ab642f6c3ee6d2e0183a434d2e5be5c7b6d5b1db63f403671f1f",
+      "pool_template_corr": 0.5812732577323914
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_10mA_40C_0/frame_0001.png",
+      "sha256": "c7230b18b7876cc7e656dfc8d5ab76c1a7ff1765d44b9df9889bca6be8a1a8a6",
+      "pool_template_corr": 0.5610885620117188
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_10mA_40C_0/frame_0005.png",
+      "sha256": "829fa183138654c016524460a903ff9817341f8527e27b5ae7ef7733b3146221",
+      "pool_template_corr": 0.5537046194076538
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_10mA_40C_0/frame_0007.png",
+      "sha256": "35f496874001e1ffed57b1a063311c07c1e91ec12226a96c27b91f17cf970c90",
+      "pool_template_corr": 0.5481935739517212
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_10mA_40C_0/frame_0008.png",
+      "sha256": "d73539bc5e498f22130f80948710b3806c0a15090810cfedade6b8b4cc06b9a2",
+      "pool_template_corr": 0.5665040612220764
+    },
+    {
+      "device": "M2",
+      "condition": "M2_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_10mA_40C_0/frame_0011.png",
+      "sha256": "379620c9d9e34a78835eeef95fb0eef9854b407769c95da11bd11792d2826d48",
+      "pool_template_corr": 0.5326195359230042
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_20mA_20C_0/frame_0013.png",
+      "sha256": "f9c80b40ba98b21959b889a35b1b5741b9b9181b250e875ee6d9221bc6c6dfcc",
+      "pool_template_corr": 0.7754122018814087
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_20mA_20C_0/frame_0022.png",
+      "sha256": "5e5526429fb19798a4b0f4aa48a96c2c812308f0155b20ad694df2cbe6433feb",
+      "pool_template_corr": 0.7723249197006226
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_20mA_20C_0/frame_0025.png",
+      "sha256": "261561b17a01248b385554b944d64cd16e81bf1d78e4d4bc6c3d99ca94796e4e",
+      "pool_template_corr": 0.7667838335037231
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_20mA_20C_0/frame_0027.png",
+      "sha256": "5c19fe0d0ad21ef20cb6934c04dfa399d491dc73d57737b3da4960902fef5ea4",
+      "pool_template_corr": 0.7675551176071167
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_20mA_20C_0/frame_0028.png",
+      "sha256": "48686938301d89d5e3b1bb3f469032332c31eb40b3909313ae31eab06e913682",
+      "pool_template_corr": 0.7686492204666138
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_20mA_30C_0/frame_0003.png",
+      "sha256": "9baeb2a8e977d4e726458418a6396a240bdcdab5aff251fa94793ca4665b24e3",
+      "pool_template_corr": 0.6152083873748779
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_20mA_30C_0/frame_0005.png",
+      "sha256": "e0bee724229c7032dd76d0837c9a5ac869e50fab912f7b604c70a9076cd27e29",
+      "pool_template_corr": 0.5913214683532715
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_20mA_30C_0/frame_0016.png",
+      "sha256": "f900965ed1eacdef7756eadca7e9bce5db1afbf1ca97b39f7c5e7dabb798d9b9",
+      "pool_template_corr": 0.5955324172973633
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_20mA_30C_0/frame_0018.png",
+      "sha256": "ec7d960bf89e5d0f159bf64a11523b4e17472846fe52fe7d810f1e886801a1b1",
+      "pool_template_corr": 0.6021390557289124
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_20mA_30C_0/frame_0019.png",
+      "sha256": "26755cfa3df48788425e4a0ffefea553bcb7ec15c4f4454ed3ae770f51b791b9",
+      "pool_template_corr": 0.6063514351844788
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_20mA_40C_0/frame_0002.png",
+      "sha256": "43b7affba942fee04ce66602d58c09d42fdfca6d97c1cd4ad05649113aae79a3",
+      "pool_template_corr": 0.5760853290557861
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_20mA_40C_0/frame_0003.png",
+      "sha256": "8767b71895ac46609d6c7af12a9e08329615a0584843055d9e8d39a5bad7d86a",
+      "pool_template_corr": 0.4961354732513428
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_20mA_40C_0/frame_0011.png",
+      "sha256": "4d1f7fc61fd1f287f331c213342c45cb589479aee1a1d754d77a7d01223ed2a4",
+      "pool_template_corr": 0.5420767664909363
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_20mA_40C_0/frame_0020.png",
+      "sha256": "a7f0c116bf3798710b9ad85847d8b11007299e414616d72c5f8104c531c2cfdf",
+      "pool_template_corr": 0.577907383441925
+    },
+    {
+      "device": "M2",
+      "condition": "M2_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_20mA_40C_0/frame_0029.png",
+      "sha256": "31e6f9c431f3f42a271de01260043995f89f5c3575087549d5bd28231bff9187",
+      "pool_template_corr": 0.5786547660827637
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_30mA_20C_0/frame_0001.png",
+      "sha256": "0cadc0ae22fe2d35d1f700f4d836b3138ab4256b9fbbd865a03693f829853412",
+      "pool_template_corr": 0.6727866530418396
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_30mA_20C_0/frame_0005.png",
+      "sha256": "e094278f5e532379e7a5da574ae42df0217b17a2b87accbe242e58fa49eea73c",
+      "pool_template_corr": 0.6854037046432495
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_30mA_20C_0/frame_0007.png",
+      "sha256": "ad57d2996c0356e7e91621ccb6dbe8f8a1a487328aaa1b2d41660c149cd519c3",
+      "pool_template_corr": 0.7023345828056335
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_30mA_20C_0/frame_0011.png",
+      "sha256": "312ed14d0100346d36c2ef30f2ba8c7ede76bda7439bf9a5c7760beefec46234",
+      "pool_template_corr": 0.6841617822647095
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_30mA_20C_0/frame_0019.png",
+      "sha256": "d9dd092c7b5fba4ce2e59cf8ce429409e3add25a7d523e9fcc1881ac93a776b2",
+      "pool_template_corr": 0.7027236819267273
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_30mA_30C_0/frame_0001.png",
+      "sha256": "35ba86311c2f492de68cf82dbae8ac578d2ecc88c317b1121963361d12bf1226",
+      "pool_template_corr": 0.6557879447937012
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_30mA_30C_0/frame_0014.png",
+      "sha256": "ddf36320acdbf4c2e69650f26b8e5ff17338357a3ae4426ab787457678bd2922",
+      "pool_template_corr": 0.6384177207946777
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_30mA_30C_0/frame_0019.png",
+      "sha256": "5905373f63a78272097691b9fcdec46fa5301d91c425054cd3c2c55c3d7cca81",
+      "pool_template_corr": 0.6397020816802979
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_30mA_30C_0/frame_0020.png",
+      "sha256": "07b92b10a37b54da2fcf4e0b79630eca948f89b006e0321204a92be4edcc5758",
+      "pool_template_corr": 0.5754861831665039
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_30mA_30C_0/frame_0024.png",
+      "sha256": "c07d45c0fa9cec968b78408cc9f24bdf133f51b9d27dfe08817dae301eb3cc66",
+      "pool_template_corr": 0.6450306177139282
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M2_30mA_40C_0/frame_0015.png",
+      "sha256": "5aa52b49b953d76190900624c77fbf06df70a6fb360f6275766f892bcd7f349c",
+      "pool_template_corr": 0.6124423146247864
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M2_30mA_40C_0/frame_0016.png",
+      "sha256": "1db708ce061588c9ec300123c9db5086899547afb3221b8df199a473b4f97216",
+      "pool_template_corr": 0.6082990169525146
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M2_30mA_40C_0/frame_0017.png",
+      "sha256": "32c4b3a361a4ca74c06625666ed452f1a55aa228c0703871257f10549d3edea6",
+      "pool_template_corr": 0.6065430045127869
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M2_30mA_40C_0/frame_0019.png",
+      "sha256": "8ee21759a1b664100cfb4f77a8b4385f9c67fc741ef028bd73443d83d859b05d",
+      "pool_template_corr": 0.6081277132034302
+    },
+    {
+      "device": "M2",
+      "condition": "M2_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M2_30mA_40C_0/frame_0022.png",
+      "sha256": "9c33c1b7a5618927c6dc581ad432caec135036e42ba25546d44fd5e5af206c82",
+      "pool_template_corr": 0.6033650636672974
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_10mA_20C_0/frame_0004.png",
+      "sha256": "05640822915a176ab775de5651dc713adf2ba7fce9e5fe6d0403045b4cd0437c",
+      "pool_template_corr": 0.7124126553535461
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_10mA_20C_0/frame_0007.png",
+      "sha256": "2c8dfb03ace3d5d9619d50b87f098948b1e6375674c4c80be2a4b87a7851c817",
+      "pool_template_corr": 0.7396029829978943
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_10mA_20C_0/frame_0011.png",
+      "sha256": "7ab08e14bc79b84ca14394f1f9be7e33a306a4467e41a3d698e20a57273540f1",
+      "pool_template_corr": 0.7251257300376892
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_10mA_20C_0/frame_0016.png",
+      "sha256": "1eac498ee8abb6b616f4cb9d7de32707d5058b129464bc4efc982ffa8c6f44eb",
+      "pool_template_corr": 0.7406184673309326
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_10mA_20C_0/frame_0031.png",
+      "sha256": "56db7d92a481984db12524b9b0c481f266759f2197e16f31c6f32c0fa79244d7",
+      "pool_template_corr": 0.7583709955215454
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_10mA_30C_0/frame_0007.png",
+      "sha256": "5397b90a22a3b50d591738fac679721421706b29daeb54f2d3b5cff9de96907f",
+      "pool_template_corr": 0.7267960906028748
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_10mA_30C_0/frame_0008.png",
+      "sha256": "6b04b86bea09571f324119d05a8296050864698f89a3bce47013b279d95c013f",
+      "pool_template_corr": 0.745174765586853
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_10mA_30C_0/frame_0010.png",
+      "sha256": "a50ece282b7d7e33633cdc2a71b2305444e6773d870e155274465cc54b8e7508",
+      "pool_template_corr": 0.7551149725914001
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_10mA_30C_0/frame_0013.png",
+      "sha256": "16a34219953dc374228188b30d889d6fa3dc83e3c9c16f28e8cd37b1f42faf67",
+      "pool_template_corr": 0.7207754850387573
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_10mA_30C_0/frame_0024.png",
+      "sha256": "59cfebd26422369d667d4521634cbbf8c6e1d6a8c5151e3ddbdbab20d6c66f69",
+      "pool_template_corr": 0.7185925245285034
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_10mA_40C_0/frame_0001.png",
+      "sha256": "8a1c4c2f258a36298e61f89984d3b5f091771a47951bc918a6ea2f2c148902c5",
+      "pool_template_corr": 0.7512922286987305
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_10mA_40C_0/frame_0005.png",
+      "sha256": "08aa6eed87ee24e7b3049dc5248ab4f6533be954a68bde6ef173ece5607f6a84",
+      "pool_template_corr": 0.7511709928512573
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_10mA_40C_0/frame_0006.png",
+      "sha256": "530632382f18f7e89a71b588550812b8545f876d372c016eb90335b43b15ac07",
+      "pool_template_corr": 0.7117512822151184
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_10mA_40C_0/frame_0008.png",
+      "sha256": "1ade79dcf676d4222b7634cf249671934cb6d1e6179929a02a7b87875f464b0a",
+      "pool_template_corr": 0.7550426721572876
+    },
+    {
+      "device": "M3",
+      "condition": "M3_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_10mA_40C_0/frame_0010.png",
+      "sha256": "75e98b315f40984c28b9de0f4534cb0eb3dc97170a71a86dd9e0adc7c38bb252",
+      "pool_template_corr": 0.7516534924507141
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_20mA_20C_0/frame_0005.png",
+      "sha256": "5dbbe689947771d74116a3da75518ce569ea51c88ee6dd580b10c5d80ab3f48b",
+      "pool_template_corr": 0.7571257948875427
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_20mA_20C_0/frame_0006.png",
+      "sha256": "f6615d3df4acdd4d3ed5bf6456e7536b3d60120e7e57a47a0bbb464cdd09cb0b",
+      "pool_template_corr": 0.7521795630455017
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_20mA_20C_0/frame_0022.png",
+      "sha256": "77c63b5a1eb3aa2a3efbcf79a1961bd4e32247eb7746e885cc87c5436f555068",
+      "pool_template_corr": 0.7550910115242004
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_20mA_20C_0/frame_0025.png",
+      "sha256": "56c1cb2408a77c88d6763b0a797bc9a8f119550582c8292a0399479b6e875559",
+      "pool_template_corr": 0.7536027431488037
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_20mA_20C_0/frame_0030.png",
+      "sha256": "1b06bdf2045f92d8ad05a494d466c18fe93baea068fe687515c896d2dca5e696",
+      "pool_template_corr": 0.7548882365226746
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_20mA_30C_0/frame_0001.png",
+      "sha256": "ee80c0069f80e8f0f9d5daa4f6ae3510d705b1a3f84573c4f65e12a269719010",
+      "pool_template_corr": 0.7499315738677979
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_20mA_30C_0/frame_0008.png",
+      "sha256": "7e291586beffb610760274751a0ec1415d7635b2028f11687b8cbb2f793e7f97",
+      "pool_template_corr": 0.7498185038566589
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_20mA_30C_0/frame_0012.png",
+      "sha256": "0ba87fc31b73d1158b77f807bf842fe956b5674872699bc82b8e34701e7f698c",
+      "pool_template_corr": 0.7241310477256775
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_20mA_30C_0/frame_0018.png",
+      "sha256": "22badc690ffcbc1e1049400e326abc3dbf90a29454f5aa73e46143a34ffc0a0e",
+      "pool_template_corr": 0.7474459409713745
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_20mA_30C_0/frame_0023.png",
+      "sha256": "d2bce62a2ca69e1cb7accc58eebcf37facc321bf92b3ccfef300e443604a970c",
+      "pool_template_corr": 0.692008912563324
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_20mA_40C_0/frame_0001.png",
+      "sha256": "3badcebd9d0a747b050f61b72af013a9ad34140cd5fe2b8caf50449fc9be732e",
+      "pool_template_corr": 0.7486674189567566
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_20mA_40C_0/frame_0005.png",
+      "sha256": "ad83a0a4bb077908ab0cfa1a05bb2cfddf447db6f94a146886ed72f845ec35f0",
+      "pool_template_corr": 0.7349615097045898
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_20mA_40C_0/frame_0012.png",
+      "sha256": "30744b01501c872afa40c06760a345ec71f7ed8fd687f92977a9505a84ff9dd9",
+      "pool_template_corr": 0.7432808876037598
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_20mA_40C_0/frame_0015.png",
+      "sha256": "8595536e82ac222a8463acc0bc9415304168b63bf70008c5ba49d99031a571bd",
+      "pool_template_corr": 0.7483968734741211
+    },
+    {
+      "device": "M3",
+      "condition": "M3_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_20mA_40C_0/frame_0016.png",
+      "sha256": "5dd707ce76bfce01fd5367868285f3e063a52a68605832ce60eaf424057457b0",
+      "pool_template_corr": 0.7423798441886902
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_30mA_20C_0/frame_0001.png",
+      "sha256": "bab568ec51522eef5cacf807dab1686a498e60adeb365aad349b40e25cbef49e",
+      "pool_template_corr": 0.7053708434104919
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_30mA_20C_0/frame_0007.png",
+      "sha256": "09cb0b71c8cc3c81f63f48a416e421a2e4618310faa4d38d0de3bbc829d3bbce",
+      "pool_template_corr": 0.7045227289199829
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_30mA_20C_0/frame_0018.png",
+      "sha256": "a81436a535c2aa322e7dfb3b28d71189c49e8e75ce42ad340ca270fcf440b020",
+      "pool_template_corr": 0.7408275008201599
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_30mA_20C_0/frame_0025.png",
+      "sha256": "1c24e0181ffd8cd9eded3920dd7085cecf88121cabb95cde9d4afea549237811",
+      "pool_template_corr": 0.7179369926452637
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_30mA_20C_0/frame_0035.png",
+      "sha256": "e7dace9cb89155bc766e99eaa0648e594deb754b0b4751eea196d81d031c81d1",
+      "pool_template_corr": 0.7440432906150818
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_30mA_30C_0/frame_0004.png",
+      "sha256": "0dfcad936002f0a1aa2542eda6e4b5e9d5a439e46d5409db82bf298169913b9d",
+      "pool_template_corr": 0.7301692366600037
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_30mA_30C_0/frame_0005.png",
+      "sha256": "bda76fdbc8f5526d32d47f528120ab57366299f16390da848748cb607cb0ba9b",
+      "pool_template_corr": 0.7274746298789978
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_30mA_30C_0/frame_0012.png",
+      "sha256": "f116eb973dd8fc99ed951c395ca647f922c655e77bb95a36022679ea44326fe7",
+      "pool_template_corr": 0.7319921851158142
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_30mA_30C_0/frame_0013.png",
+      "sha256": "f321cfa7d49c14996c443729c26de079befbd0c58ccbfbe35eb962f936bd3c5a",
+      "pool_template_corr": 0.7355000376701355
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_30mA_30C_0/frame_0014.png",
+      "sha256": "10abf28750ce14a8699ce72bb1a09a55e8d5f32980da846558a1aff62ccc1d5f",
+      "pool_template_corr": 0.7258867025375366
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M3_30mA_40C_0/frame_0003.png",
+      "sha256": "ee757f6a122cadcc0ab278aec7d3c2b0594efd1ae4f15fbd9300350c0295bf67",
+      "pool_template_corr": 0.7221836447715759
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M3_30mA_40C_0/frame_0004.png",
+      "sha256": "a203880797a8414cad43f9d75c4368d6df95cb3c707d5522e30ce3293c914cd6",
+      "pool_template_corr": 0.735369086265564
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M3_30mA_40C_0/frame_0005.png",
+      "sha256": "823c27706a980b59357c7cfa6e57de89c7520f54fff45570cdfab94ff0140c09",
+      "pool_template_corr": 0.7472360134124756
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M3_30mA_40C_0/frame_0006.png",
+      "sha256": "c7c93bdab18172ef91b1cdd39b72f3ead0775cac4b349fc40ae02391e0a762e4",
+      "pool_template_corr": 0.7374621033668518
+    },
+    {
+      "device": "M3",
+      "condition": "M3_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M3_30mA_40C_0/frame_0007.png",
+      "sha256": "f1471c8f0592fc32b22dfa9a84118a595ef23fb26d5876e670a1b6fa2b717e63",
+      "pool_template_corr": 0.7457965612411499
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_10mA_20C_0/frame_0001.png",
+      "sha256": "5dd1f55ee32f83de14b480fb3d78b5a4931044af4a1d3345efdae2e234f72b03",
+      "pool_template_corr": 0.7137977480888367
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_10mA_20C_0/frame_0004.png",
+      "sha256": "c6faeced2a2cd78e43bfdbc805ba1f26ba941e11e6601810e1da4f5c28117469",
+      "pool_template_corr": 0.6800140738487244
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_10mA_20C_0/frame_0007.png",
+      "sha256": "a953c8cdc3bf82d6d7aa784b5d5be5fae713a43e92f9366d718c9939033a41a0",
+      "pool_template_corr": 0.7087969183921814
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_10mA_20C_0/frame_0020.png",
+      "sha256": "428112bebc5f83df8f7236b3af9e8730f3e9bd8653d26a1698948b2333bd5c06",
+      "pool_template_corr": 0.7266936302185059
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_10mA_20C_0/frame_0024.png",
+      "sha256": "3072d9abce8f6869580f0ef4489cebc0ea645a5a085ac2a621c547ff425f1911",
+      "pool_template_corr": 0.7194654941558838
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_10mA_30C_0/frame_0001.png",
+      "sha256": "69789113c301aeb6bd642bf5e33af7e01df496d329c511b60dd28664f09e9caf",
+      "pool_template_corr": 0.6935275793075562
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_10mA_30C_0/frame_0002.png",
+      "sha256": "ff055657f5187df3764dd3ba720f41066fd2237693142cd543a063af24fe22c1",
+      "pool_template_corr": 0.7435629367828369
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_10mA_30C_0/frame_0006.png",
+      "sha256": "5609676118998458f9246cd9728fefbba1a5f99bf247a7e453efd3b4ab1b8d50",
+      "pool_template_corr": 0.723108172416687
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_10mA_30C_0/frame_0016.png",
+      "sha256": "fa2841583053ee71e343b214d9ae8574d087afb633815aa1a4313947befa5b63",
+      "pool_template_corr": 0.7091541290283203
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_10mA_30C_0/frame_0017.png",
+      "sha256": "d505e7b9a360ad69a13a5ad1f442f3c074336708b48ac749873877c047c5b874",
+      "pool_template_corr": 0.6930751800537109
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_10mA_40C_0/frame_0002.png",
+      "sha256": "87bdde31fcfc10234e32c717f4116a3bc5ed3809aea2d46bc451e27690bf53bc",
+      "pool_template_corr": 0.696377694606781
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_10mA_40C_0/frame_0004.png",
+      "sha256": "fb50ba4cc3827b4796d9e219777d23ef136bbc044d7e2ab84ae6f19c61440930",
+      "pool_template_corr": 0.7155601978302002
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_10mA_40C_0/frame_0009.png",
+      "sha256": "90f750af856814b90ddbc67a8d032a12c8ab924c3f159d37734b471bb1f0031f",
+      "pool_template_corr": 0.7294487357139587
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_10mA_40C_0/frame_0014.png",
+      "sha256": "46eaafaadbbd8cd581ff8f5830c6140ce1e2a864fb805da14eb367dbe492f093",
+      "pool_template_corr": 0.7148475050926208
+    },
+    {
+      "device": "M4",
+      "condition": "M4_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_10mA_40C_0/frame_0016.png",
+      "sha256": "e3ac26234fed12d2682b33be72201dc5711002fa19defed5a4ea05fadadd3315",
+      "pool_template_corr": 0.7143968939781189
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_20mA_20C_0/frame_0004.png",
+      "sha256": "c1985bc1b920f660fca8deccabeda211f9964aa8ed269e26f114791b4ff5fa15",
+      "pool_template_corr": 0.7349088788032532
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_20mA_20C_0/frame_0006.png",
+      "sha256": "8dabdb23ddec5a0a218450b3241be60c3a99f9c7d2bddc93a5468f209b1fd19d",
+      "pool_template_corr": 0.7296809554100037
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_20mA_20C_0/frame_0007.png",
+      "sha256": "6f86195485d3879789caec009fd72107cd8d014372a238087b0ea82907246daf",
+      "pool_template_corr": 0.7346457242965698
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_20mA_20C_0/frame_0011.png",
+      "sha256": "0098e871f55907acc4a8c80ae3115890b98e89ed6f3e0bbdc51e1d755ddb1c12",
+      "pool_template_corr": 0.7072241902351379
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_20mA_20C_0/frame_0012.png",
+      "sha256": "30c5e455669e6abe6c24f05a5d3e405c3bcd6f4c249ceb8c364fd4d2dfff9289",
+      "pool_template_corr": 0.7155110239982605
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_20mA_30C_0/frame_0003.png",
+      "sha256": "476b558b1d8ff58f2b631e31a57eabbacffee2c35ed5c0d568a9357d213948d6",
+      "pool_template_corr": 0.7117803692817688
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_20mA_30C_0/frame_0004.png",
+      "sha256": "039dc83540ba5152efa6c746ac903df1ef2f93c1d48ec3000ea49ce24fb2df31",
+      "pool_template_corr": 0.6909937262535095
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_20mA_30C_0/frame_0009.png",
+      "sha256": "ab6e4cb501487dabeb911a978744e22a88609efc399ad137469a397ee8089d75",
+      "pool_template_corr": 0.7258294820785522
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_20mA_30C_0/frame_0019.png",
+      "sha256": "1ba74120aef0ebc903f5e1e76279144faac5a44f773ab76d86e2c3d17c40ec47",
+      "pool_template_corr": 0.7230469584465027
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_20mA_30C_0/frame_0020.png",
+      "sha256": "2b85073c22d039a2b07f5a00e153728dce9ff02448701eab49399e8d3b9f38d4",
+      "pool_template_corr": 0.7459707856178284
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_20mA_40C_0/frame_0006.png",
+      "sha256": "3a3a9627fe682c8374999a781794afff88815355316ee2d5a9d5cb6e7ab97a81",
+      "pool_template_corr": 0.7252616882324219
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_20mA_40C_0/frame_0009.png",
+      "sha256": "321dcc0bdd0e396f84c22a72427bf28fa6fc3b60eefb011072a335443cc5da2c",
+      "pool_template_corr": 0.7149685025215149
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_20mA_40C_0/frame_0016.png",
+      "sha256": "7809badb81a9eec872d0374bd4e97fc000633d0f93fdddddbd57bc2bf084cb4e",
+      "pool_template_corr": 0.7193379998207092
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_20mA_40C_0/frame_0020.png",
+      "sha256": "2260c451feaae591db1e090d622819d31c8e910c53a88f816dde39bf9d74b0ba",
+      "pool_template_corr": 0.7153565883636475
+    },
+    {
+      "device": "M4",
+      "condition": "M4_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_20mA_40C_0/frame_0021.png",
+      "sha256": "7bf2893dc9d483be8d530b69cba6e40a6bbd3206dbdea28a552d25976de66637",
+      "pool_template_corr": 0.7190318703651428
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_30mA_20C_0/frame_0003.png",
+      "sha256": "dc58b9ec44d43b7437dfdc0c8a6c7a4b4e8b23bc2bd9a5470903f3f4b121fbbf",
+      "pool_template_corr": 0.7493573427200317
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_30mA_20C_0/frame_0004.png",
+      "sha256": "2a9b75e607b0b1cde082c351a3ccf1b65f647080e625b5d89159cb4ce52b49ed",
+      "pool_template_corr": 0.7585681080818176
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_30mA_20C_0/frame_0005.png",
+      "sha256": "0b1d91a8e2f4bf2752f2f9e714be0959de27e113755d5a6100ede30d54f3b9ee",
+      "pool_template_corr": 0.7569741606712341
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_30mA_20C_0/frame_0006.png",
+      "sha256": "576c2022d0d1b71d4388451ceb30674d859467d745dfb41566b0834624c2d2b7",
+      "pool_template_corr": 0.7122538089752197
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_30mA_20C_0/frame_0017.png",
+      "sha256": "9390b302f1eea6c9dca8348aba09890f50fdfb3f7aee8e4dcdf19513790c32c8",
+      "pool_template_corr": 0.7153226137161255
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_30mA_30C_0/frame_0005.png",
+      "sha256": "05be21517f00460a4d84915bcff919e7b1927717b2a0f48a4fcf974da2303c30",
+      "pool_template_corr": 0.6924915313720703
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_30mA_30C_0/frame_0006.png",
+      "sha256": "9993415cb05a2d6fff45ddebde8c4a17d29aa9615da41c5f5247e212daba8956",
+      "pool_template_corr": 0.7374378442764282
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_30mA_30C_0/frame_0009.png",
+      "sha256": "fba238c03160005ab7cb419ef6971c4414e5fa9a66554f38f10bb3fea46f0fef",
+      "pool_template_corr": 0.7348722219467163
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_30mA_30C_0/frame_0010.png",
+      "sha256": "95daa59f4bbe7803118fd8d3d5812c2f0529873ee86d98d9bc262bf754b79297",
+      "pool_template_corr": 0.7388001084327698
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_30mA_30C_0/frame_0011.png",
+      "sha256": "26f75f8a32c345c876335191cd371859292e3870330b93e8cebc84e4778dc1e9",
+      "pool_template_corr": 0.7387210130691528
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M4_30mA_40C_0/frame_0008.png",
+      "sha256": "ef702e9e87318ec4ea7f39245f3fee660d93aabec7111fd75b351e8fbf6c3484",
+      "pool_template_corr": 0.6862323880195618
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M4_30mA_40C_0/frame_0017.png",
+      "sha256": "6fe987d3ce006b164d63a8e86036d91a15737a7420d6293d61418692556cc47e",
+      "pool_template_corr": 0.6966522932052612
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M4_30mA_40C_0/frame_0019.png",
+      "sha256": "11727892e68bd34786e5bf6d7c3b31e1914072b56cec171e3280d5d9f60d8d86",
+      "pool_template_corr": 0.6324323415756226
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M4_30mA_40C_0/frame_0021.png",
+      "sha256": "da7e950a780c177472c41c501a24e10694d0763b04a28b956893e1feb6f58255",
+      "pool_template_corr": 0.7148312330245972
+    },
+    {
+      "device": "M4",
+      "condition": "M4_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M4_30mA_40C_0/frame_0022.png",
+      "sha256": "97ecd87071f34b92aeed9db6585782b3e50245f7c9662c70a3a37ea229c18477",
+      "pool_template_corr": 0.7024964690208435
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_10mA_20C_0/frame_0002.png",
+      "sha256": "13062c4aa9bc5c49b4d4877928ebee8e50740792439a66221770c71ecd18c60f",
+      "pool_template_corr": 0.8237481117248535
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_10mA_20C_0/frame_0003.png",
+      "sha256": "856a537e7fa6280a546b69380225d106e5da7c7d99fa2de2c797a8bc75858c02",
+      "pool_template_corr": 0.8177899122238159
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_10mA_20C_0/frame_0005.png",
+      "sha256": "6e44ff91c0cf18bbb777edff9eb498dae038b0fffb083da88b148037cc1514fd",
+      "pool_template_corr": 0.7499664425849915
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_10mA_20C_0/frame_0008.png",
+      "sha256": "43de8335a33490baacc9549d9cb5703f423f06035abc507c44c9375c6a684b3b",
+      "pool_template_corr": 0.7484613656997681
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_10mA_20C_0/frame_0022.png",
+      "sha256": "e2d3fb6ac10c2953cd5bdc98aff637539085105cae96f314c7f0ae191a6cc325",
+      "pool_template_corr": 0.7356892228126526
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_10mA_30C_0/frame_0004.png",
+      "sha256": "fbf087ec925ed1bb6c5ca11a494a3e8bac9c2d8de8b304590c689119e6520b88",
+      "pool_template_corr": 0.7390164732933044
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_10mA_30C_0/frame_0006.png",
+      "sha256": "084a687f3d76a13747e890099c05e49c8f876c72ada876c0cabc11394cfc2730",
+      "pool_template_corr": 0.7351902723312378
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_10mA_30C_0/frame_0018.png",
+      "sha256": "440d78b461cb5463dcbc0a40337f48f5415a1b041784f5c6ca1d66f6388dacc5",
+      "pool_template_corr": 0.7102470397949219
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_10mA_30C_0/frame_0020.png",
+      "sha256": "28c07979608344c5ae91a6559c739b14c0504548ef720306a1334fa1aa8be757",
+      "pool_template_corr": 0.7343829870223999
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_10mA_30C_0/frame_0021.png",
+      "sha256": "f894f3f82ccafd28fe1ef064bf8f5c17c7c93c20ed564d80d9c6b26fb3e7122b",
+      "pool_template_corr": 0.7250975370407104
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_10mA_40C_0/frame_0011.png",
+      "sha256": "070c088232fa7289d66c92d61258d9ccd7ddb08f959e460e8ad42c8aec611a48",
+      "pool_template_corr": 0.7087485790252686
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_10mA_40C_0/frame_0013.png",
+      "sha256": "985ab8f2784f724ac84acfa49fd1d14d2169524f0a91f010226cefe33cf06c77",
+      "pool_template_corr": 0.7204359769821167
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_10mA_40C_0/frame_0017.png",
+      "sha256": "1cd15ac8164c6d20d12199baf9a4b20c0a6c801a2e0ae0104c9208bed0b28fbf",
+      "pool_template_corr": 0.650280773639679
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_10mA_40C_0/frame_0021.png",
+      "sha256": "cc2ca0943976d8f3cb89b05f869317d6b55ea04ecc50b343ef020ae0fcda3ec8",
+      "pool_template_corr": 0.7186959385871887
+    },
+    {
+      "device": "M5",
+      "condition": "M5_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_10mA_40C_0/frame_0023.png",
+      "sha256": "12e4b3c57a7620678b9dc7dcdb7f99ee0b0574069e133dc13175179eeee5d49a",
+      "pool_template_corr": 0.7051221132278442
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_20mA_20C_0/frame_0007.png",
+      "sha256": "d2c08d13907ac302ed3767be062b69d3972aaba1336fb4a190275a652283081c",
+      "pool_template_corr": 0.8058179020881653
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_20mA_20C_0/frame_0008.png",
+      "sha256": "a65d2417a5e7b3edd2d81825a1f91ca315572a6987bbc93d2c4725dd6294ccd6",
+      "pool_template_corr": 0.8067414164543152
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_20mA_20C_0/frame_0016.png",
+      "sha256": "0330076fca40526f46c1d5f134aaa5e5b5312822cc441c4949f31c1945c28a82",
+      "pool_template_corr": 0.7464386224746704
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_20mA_20C_0/frame_0020.png",
+      "sha256": "524dad0749ebee5b2692e7c6ced29e7cad01ca29a4f43f61bc6ff74bf645bd69",
+      "pool_template_corr": 0.7828938961029053
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_20mA_20C_0/frame_0023.png",
+      "sha256": "a185e3d4dc94830488edaff256b0e74ff77fd14b765db6708dbe7fb9ed4616e6",
+      "pool_template_corr": 0.8179596066474915
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_20mA_30C_0/frame_0005.png",
+      "sha256": "41c62199506d0b9774ef04145e9b262e8a7fa0784e788295ad3a537d3c9cffc1",
+      "pool_template_corr": 0.7618830800056458
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_20mA_30C_0/frame_0022.png",
+      "sha256": "7c06159e012e72ce9a2ddd5e274ea6f9759ee0a3db1297c0fa8a03cfda078c06",
+      "pool_template_corr": 0.71434086561203
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_20mA_30C_0/frame_0024.png",
+      "sha256": "47576aece0c24d916672855b2abfe77f6b1a466a49ea1891ab632bca41e17bf7",
+      "pool_template_corr": 0.7125810384750366
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_20mA_30C_0/frame_0027.png",
+      "sha256": "9c476fce3c27bf4a4d0d35896d4d7e0f91361bbb4bb39ebbc31fe8bf1384a90a",
+      "pool_template_corr": 0.7431681156158447
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_20mA_30C_0/frame_0029.png",
+      "sha256": "22a61607f51e33c865bbca3a77465879a160e912812811bdf9c4cb4747a46d37",
+      "pool_template_corr": 0.734308660030365
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_20mA_40C_0/frame_0007.png",
+      "sha256": "acb872ef763d281fbcf685168ac63056b332b68bf6b085977c6326444cd44e2a",
+      "pool_template_corr": 0.7415236830711365
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_20mA_40C_0/frame_0017.png",
+      "sha256": "069cdcb923b907b66c764ba76d9f575fd5b82f5fc3f6d7e21daf97f20afab025",
+      "pool_template_corr": 0.7383191585540771
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_20mA_40C_0/frame_0018.png",
+      "sha256": "10b2e068099b3310724c223a26ba66666c6434ee55ac1fdf3d1938aae0179905",
+      "pool_template_corr": 0.7170118689537048
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_20mA_40C_0/frame_0020.png",
+      "sha256": "a92cbf6feea12deb3f6a4def62f6b9b2f86b1a6b48c379e0f3a1b9da97f326ae",
+      "pool_template_corr": 0.7545680403709412
+    },
+    {
+      "device": "M5",
+      "condition": "M5_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_20mA_40C_0/frame_0026.png",
+      "sha256": "22c6ef62591c6807ec62bf25ccb3fea4817c5ee1c358a89c409cad4733b934b9",
+      "pool_template_corr": 0.7429850101470947
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_30mA_20C_0/frame_0007.png",
+      "sha256": "c16de2d099624ab0731236e9a111b6537e362e1b7efcb74440401dbb438b212d",
+      "pool_template_corr": 0.793854832649231
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_30mA_20C_0/frame_0010.png",
+      "sha256": "a69f8910481c433e317fa15942d1303154d184f264a880d6423036782ad8b9a8",
+      "pool_template_corr": 0.7513614296913147
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_30mA_20C_0/frame_0012.png",
+      "sha256": "a171b0f437bd1882cb40a3212042a72bcec8877fbeb5c67ca68e680d321941fd",
+      "pool_template_corr": 0.7889029383659363
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_30mA_20C_0/frame_0014.png",
+      "sha256": "5d79598455b0dae091bfbfc0cd57165a89800fffe83f33ecaf4d5161ca28fac5",
+      "pool_template_corr": 0.7727726697921753
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_30mA_20C_0/frame_0018.png",
+      "sha256": "ef9e1d5b5feb3fde7764b7d5becdf418913831371f67a898a1129049444ea32b",
+      "pool_template_corr": 0.7270499467849731
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_30mA_30C_0/frame_0003.png",
+      "sha256": "ad98a40f8af8ff0d997be0510ddd9f99320810c407332df511dc4e60378381d8",
+      "pool_template_corr": 0.7816165089607239
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_30mA_30C_0/frame_0004.png",
+      "sha256": "c0869987b0d257f097667eb7f69728ee6ee07cc18f350d577a75663e1f856a83",
+      "pool_template_corr": 0.7740759253501892
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_30mA_30C_0/frame_0005.png",
+      "sha256": "88341867a567143ee4a3bf3e437a8f9d501a4245b8de36505d0867645adeda8d",
+      "pool_template_corr": 0.7686470150947571
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_30mA_30C_0/frame_0009.png",
+      "sha256": "eafe3c1df7518057053549ca0ce54a1b6559ca8528044a812acb7bf17e720998",
+      "pool_template_corr": 0.7775647044181824
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_30mA_30C_0/frame_0010.png",
+      "sha256": "d127978f5c2f7424f092830a40c04a3051bb038e7c802637c1eed850cad15392",
+      "pool_template_corr": 0.7698218822479248
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M5_30mA_40C_0/frame_0002.png",
+      "sha256": "cc6f2fdb8530a34954cc2c1162652be0db80ebeca18c161bc7557062cc8e64f5",
+      "pool_template_corr": 0.7489483952522278
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M5_30mA_40C_0/frame_0003.png",
+      "sha256": "59f65d5994de09227c92e335593db9c9aa411af45b9afac5015aca0a496554b6",
+      "pool_template_corr": 0.7676754593849182
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M5_30mA_40C_0/frame_0009.png",
+      "sha256": "e3be29b362b2ec2db98f6d30644e3e51508aebe2e2791dbab90ef93fbb3b27bc",
+      "pool_template_corr": 0.7547224164009094
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M5_30mA_40C_0/frame_0013.png",
+      "sha256": "f711f4689f2d990dfda2c79a1bda4359129859a443416ce7a54b92b77b9b31e5",
+      "pool_template_corr": 0.743617057800293
+    },
+    {
+      "device": "M5",
+      "condition": "M5_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M5_30mA_40C_0/frame_0025.png",
+      "sha256": "8b497433a8189d714579a3652be2f076d9a728a6a8012eb85178c8d0615381dc",
+      "pool_template_corr": 0.764840304851532
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_10mA_20C_0/frame_0001.png",
+      "sha256": "cc42fc89689aed631cd7a964f146f02ce1aa985d6b3c1af9ab23a4fbfa7d13e6",
+      "pool_template_corr": 0.6819548606872559
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_10mA_20C_0/frame_0003.png",
+      "sha256": "dd3b67c6737848259443e1af36e7c79d023948592aebbb84fde37d01a78be6ec",
+      "pool_template_corr": 0.6098177433013916
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_10mA_20C_0/frame_0004.png",
+      "sha256": "e63441d0fd0f8ed5fb70eb77ae32d685af085c2747a549dbd90a0714f852ed5e",
+      "pool_template_corr": 0.6629301309585571
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_10mA_20C_0/frame_0010.png",
+      "sha256": "ddfc17e58458163b6e75456f062d4b6d551d90fd7d903cc9b2b753b1fee21caa",
+      "pool_template_corr": 0.6529557704925537
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_10mA_20C_0/frame_0014.png",
+      "sha256": "db1b23938dd08eb87a554dda664d7fa24b762786a9b6d75c563121c0331b497c",
+      "pool_template_corr": 0.6827623844146729
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_10mA_30C_0/frame_0004.png",
+      "sha256": "e4a5ab55261d7e730e5725f9fed6e34540b8e809a8f3dc8d8fa4aacea2830522",
+      "pool_template_corr": 0.6632615327835083
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_10mA_30C_0/frame_0011.png",
+      "sha256": "c616dfa76206b6933f1c0f20e7185ec59fc5e3eba7a32c8f5b7d7afb910da898",
+      "pool_template_corr": 0.6140463352203369
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_10mA_30C_0/frame_0012.png",
+      "sha256": "4de5b319034ae10f497730a6f797b2ab7864a2cafb666803005e3e53cdd17cde",
+      "pool_template_corr": 0.6541737914085388
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_10mA_30C_0/frame_0013.png",
+      "sha256": "5f3e63ee2cf408ff240302c5360627e0ec7b30f4f82a4f7337fc58d8a99abba9",
+      "pool_template_corr": 0.6498478055000305
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_10mA_30C_0/frame_0014.png",
+      "sha256": "da04b548a09d51da5e972d916cd0353259bd2ca8bc1fc877d73343085901f196",
+      "pool_template_corr": 0.6722196936607361
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_10mA_40C_0/frame_0004.png",
+      "sha256": "a112aa963db3b4ae46caa895a7753e49faf310e9cc9bc33f20457d2dd4d897ed",
+      "pool_template_corr": 0.7257394790649414
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_10mA_40C_0/frame_0021.png",
+      "sha256": "80bd18a14920e68e44c890242a8fd6b0b89ef6477f113b222aba738ac376ddcc",
+      "pool_template_corr": 0.6893853545188904
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_10mA_40C_0/frame_0025.png",
+      "sha256": "93d8ebbf70e86206c0fb29b0677d299b5673326813c8aa75ed536d4304882864",
+      "pool_template_corr": 0.7351408004760742
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_10mA_40C_0/frame_0027.png",
+      "sha256": "1c28ed01416f30c3e409db55f3d181f96a7beefa8a70f92eb5f53f318ec11532",
+      "pool_template_corr": 0.712299644947052
+    },
+    {
+      "device": "M6",
+      "condition": "M6_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_10mA_40C_0/frame_0039.png",
+      "sha256": "06326e0179c35d5f7b096c301ace00b5da4cfc96e62207cb0356695b32cde82e",
+      "pool_template_corr": 0.7325800657272339
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_20mA_20C_0/frame_0005.png",
+      "sha256": "055f8ecd319afc801a48b411385d1409a29dba6c426ea17b8854bf770e1fd1cc",
+      "pool_template_corr": 0.6933437585830688
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_20mA_20C_0/frame_0009.png",
+      "sha256": "290f09dc7e08a3a34c2de1b90ecdf53adef69ca00a83f50349821e2235213b9d",
+      "pool_template_corr": 0.6648215055465698
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_20mA_20C_0/frame_0011.png",
+      "sha256": "bcdba27276c74168de5e0d452c2cc33f1a3b2891edfe21912f71077b0f6b4300",
+      "pool_template_corr": 0.6637606024742126
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_20mA_20C_0/frame_0015.png",
+      "sha256": "540c3a97de119a4177d04c6398091a49f5b21094b0e8c762f73ca5db31144cea",
+      "pool_template_corr": 0.6532434225082397
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_20mA_20C_0/frame_0018.png",
+      "sha256": "59ed7be88f973492f007268a3b02eb4dbea359d17a6c56e417f4a81e9a3821e1",
+      "pool_template_corr": 0.6813549399375916
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_20mA_30C_0/frame_0001.png",
+      "sha256": "e2c7f7cac8f187c218a910a54a064d107437d6fa573f64203a74d0fc447ff418",
+      "pool_template_corr": 0.6969017386436462
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_20mA_30C_0/frame_0007.png",
+      "sha256": "193fca8443b3979094cbfb5015a2faa411861a8e766758ee357d6a1ff3f46398",
+      "pool_template_corr": 0.6987659931182861
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_20mA_30C_0/frame_0008.png",
+      "sha256": "a6e41708d7182dfb96c5d5ab01a35b05ae5e7acddb5cbe0383f47f3a31ef8eca",
+      "pool_template_corr": 0.6930431127548218
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_20mA_30C_0/frame_0009.png",
+      "sha256": "15977a44012c1c0b31bc2ef974d2213e9b90ab3017be3d7abcc201e071deaff9",
+      "pool_template_corr": 0.6975011229515076
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_20mA_30C_0/frame_0014.png",
+      "sha256": "543638c6fa99f5bb9fa949acbfc9b859d3e5f4d8753c739a29f43588b42c5929",
+      "pool_template_corr": 0.6951104402542114
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_20mA_40C_0/frame_0001.png",
+      "sha256": "bd1e06f9e9c8e497cd767f27d6fd1621ba910a6551fd49aa1429520d2ac3a216",
+      "pool_template_corr": 0.7087674140930176
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_20mA_40C_0/frame_0002.png",
+      "sha256": "e2fcf57ea09c2f15639d0687d34e6d5050d5e76ce9eaa830cdb9094f6366a140",
+      "pool_template_corr": 0.7380276918411255
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_20mA_40C_0/frame_0004.png",
+      "sha256": "b863ce4feb8b20dc01d816fd634fdf3a65d5412c0a6e3d99acd4f1915661d9c5",
+      "pool_template_corr": 0.7392862439155579
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_20mA_40C_0/frame_0024.png",
+      "sha256": "560078dc0061eeb39659e6d8ef93c994ad90ddc65c0704019477b288eb8c6deb",
+      "pool_template_corr": 0.7012606263160706
+    },
+    {
+      "device": "M6",
+      "condition": "M6_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_20mA_40C_0/frame_0026.png",
+      "sha256": "bcfc29717d5e243718cb5ae41bb8c08e4737e21e6ccaab4a39c9d9f20d927b24",
+      "pool_template_corr": 0.721054196357727
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_30mA_20C_0/frame_0006.png",
+      "sha256": "6656a77bec99d3b63866744492bd03ff65fddbb3575c31b5d46da9ccc34278c2",
+      "pool_template_corr": 0.6836681365966797
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_30mA_20C_0/frame_0010.png",
+      "sha256": "e3303077ec1c300be09599b5e469a46a05edf742e365aa1a8232400e7125ec4f",
+      "pool_template_corr": 0.6830237507820129
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_30mA_20C_0/frame_0014.png",
+      "sha256": "82ae0ffd286db26c1695ebd42ddb2794950e7d7bbb9ff0036de34263c3d744f0",
+      "pool_template_corr": 0.6794536709785461
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_30mA_20C_0/frame_0016.png",
+      "sha256": "56774ed1281478ec59afbbbeece41aabce4f03b16f7b33e1c77403ae716ff37b",
+      "pool_template_corr": 0.677811861038208
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_30mA_20C_0/frame_0021.png",
+      "sha256": "8c70666451e686379137c124d15a7f9db056be81f2563e1238393a3473131223",
+      "pool_template_corr": 0.5843449234962463
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_30mA_30C_0/frame_0007.png",
+      "sha256": "578ebd9eab1c9a131046cd7d836b25948e263a8148f86ac994e2ebc4189c0e0b",
+      "pool_template_corr": 0.7214113473892212
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_30mA_30C_0/frame_0008.png",
+      "sha256": "ba158c0f08a872af5090428143d2b97efcb062c0cf2d7d5f2cad7062955038b9",
+      "pool_template_corr": 0.7064127922058105
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_30mA_30C_0/frame_0011.png",
+      "sha256": "a6795fe55bbebbfcdaf205690df526cce4854770bf88328e5efb6fa880c6bb49",
+      "pool_template_corr": 0.6927470564842224
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_30mA_30C_0/frame_0017.png",
+      "sha256": "844f98b6a8dd4e3943b8e9e5099adf75e4e3d222c4664912687343e3b16c8b12",
+      "pool_template_corr": 0.7190884351730347
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_30mA_30C_0/frame_0026.png",
+      "sha256": "3032fd129ee762897bc72a66b227becc31c430d2b00213b3887864b0d431489b",
+      "pool_template_corr": 0.7132464051246643
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M6_30mA_40C_0/frame_0013.png",
+      "sha256": "1d80ec2f1f1eb4ab0575194c2505251082a65bb2cec2271c1ca63a1b7b54c95b",
+      "pool_template_corr": 0.7625302076339722
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M6_30mA_40C_0/frame_0014.png",
+      "sha256": "2c58d1c767e6d9f2ad6acffdc49d1c5167c54772a7d0a438dca2e280bb07fb87",
+      "pool_template_corr": 0.7707184553146362
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M6_30mA_40C_0/frame_0020.png",
+      "sha256": "b1af0132a5c8d375367c13887ef3995d19386916e2fea77b33d7a3e7dbaa7289",
+      "pool_template_corr": 0.737772524356842
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M6_30mA_40C_0/frame_0022.png",
+      "sha256": "39975d571b8ee6a20793440d0b7015c9106b1529d3c22292e988291b0a3302dc",
+      "pool_template_corr": 0.7724378705024719
+    },
+    {
+      "device": "M6",
+      "condition": "M6_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M6_30mA_40C_0/frame_0031.png",
+      "sha256": "022d40a44fdc287162ee8c00d70d460568805297c262d660180ed3d0c073ebd1",
+      "pool_template_corr": 0.773806095123291
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_10mA_20C_0/frame_0001.png",
+      "sha256": "624a33e590fadc70970fedc3228f3da150c41eeae6bfbde8ee350579cf88f226",
+      "pool_template_corr": 0.6906942129135132
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_10mA_20C_0/frame_0004.png",
+      "sha256": "31278df9a168ef88132374b1db4212896cf3e4505bb46c4fc0f2b5640bf3a0d6",
+      "pool_template_corr": 0.7589408755302429
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_10mA_20C_0/frame_0006.png",
+      "sha256": "db3981640c242578877cc3a457d0493f2d37728dfd8a1370064b88d4a456a7a6",
+      "pool_template_corr": 0.6944738030433655
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_10mA_20C_0/frame_0007.png",
+      "sha256": "09f0cb9b9ad2493fcbbc94e05c4f37824d7aae4d79f291373d04724ea2efc337",
+      "pool_template_corr": 0.7311922311782837
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_10mA_20C_0/frame_0008.png",
+      "sha256": "b9f2ef452b20a8fdb78c0ac1a2a142849caed3f724dad4f57c9362c843955a1d",
+      "pool_template_corr": 0.7371423840522766
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_10mA_30C_0/frame_0001.png",
+      "sha256": "f8ac85bcb9a25747e92826a242978846019ce741eb796af172b177a74da91533",
+      "pool_template_corr": 0.757778525352478
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_10mA_30C_0/frame_0002.png",
+      "sha256": "d9a6e24f9151640684d869535a6f30df401f9f0e26c8d4aba2945c6b4b486d2b",
+      "pool_template_corr": 0.7374791502952576
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_10mA_30C_0/frame_0008.png",
+      "sha256": "041c434ef8d040845c259d47bffcd73540c65e851609f482d75ade09d08d89f3",
+      "pool_template_corr": 0.7717903256416321
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_10mA_30C_0/frame_0014.png",
+      "sha256": "233b3c3401e421ebb100d6b88a2daa168bf88cde35dc84414d61c45b36d016b2",
+      "pool_template_corr": 0.7594592571258545
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_10mA_30C_0/frame_0017.png",
+      "sha256": "03bbb000258046067d84e3399471b7d64ae5f5168034eb531825c30b07322a86",
+      "pool_template_corr": 0.7408642172813416
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_10mA_40C_0/frame_0001.png",
+      "sha256": "3c2e63057673421c7b44d4a1bf6c464847da38f8f8638d22819a5a22735258f3",
+      "pool_template_corr": 0.7604175806045532
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_10mA_40C_0/frame_0002.png",
+      "sha256": "849225ed846b9c47917004dd2723a7d3fa92f37b0f93dd2c41dab2e0358a2fc8",
+      "pool_template_corr": 0.786657452583313
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_10mA_40C_0/frame_0006.png",
+      "sha256": "8c1bf8314d1ff1f72fe8db3d7a1cbfea6dd8f6804239f113dee7ecb9ee4e2590",
+      "pool_template_corr": 0.7731605172157288
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_10mA_40C_0/frame_0023.png",
+      "sha256": "921ae6f8fe991919009f1c82879bdefb6218f0d8574ed9a15b5c06a244b81054",
+      "pool_template_corr": 0.7738751769065857
+    },
+    {
+      "device": "M7",
+      "condition": "M7_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_10mA_40C_0/frame_0029.png",
+      "sha256": "ab211d585ce1771e5a46dfb1f5135a8144135b1c16283c74c9ba5e40343ad3c7",
+      "pool_template_corr": 0.7074277400970459
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_20mA_20C_0/frame_0001.png",
+      "sha256": "dbbebe7d189568037183cc5c5d2df500030bdf55453bb63f29d62286ab5de267",
+      "pool_template_corr": 0.7764669060707092
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_20mA_20C_0/frame_0005.png",
+      "sha256": "e5cb1b5e82f14a4587eb82b06541c3ae4367ea624838b344aaaca0b2caa88c29",
+      "pool_template_corr": 0.753242552280426
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_20mA_20C_0/frame_0015.png",
+      "sha256": "31ca2b37322f8590cd9dc3ed58496f7910d50363ac4dd5d1d395e2a24d52217e",
+      "pool_template_corr": 0.7478755712509155
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_20mA_20C_0/frame_0018.png",
+      "sha256": "c1de94c445624a709038f706a61fabfe2382ccad3f6acac097bc989fd4c3c684",
+      "pool_template_corr": 0.7874523401260376
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_20mA_20C_0/frame_0026.png",
+      "sha256": "924e50fe02f30d6cd0e5614b35b2f020286f1a2e7f0920c69e87c8cf7e74154d",
+      "pool_template_corr": 0.7259982824325562
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_20mA_30C_0/frame_0003.png",
+      "sha256": "101f64717828256a23cd8792bd14e5b69fbad67fc78dd0d0c908e77f9c240348",
+      "pool_template_corr": 0.7702571749687195
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_20mA_30C_0/frame_0008.png",
+      "sha256": "a55a4603bb1b255407cc0357c180f2fee17ea6329bdcda90aaac075d36c835d6",
+      "pool_template_corr": 0.7803372144699097
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_20mA_30C_0/frame_0021.png",
+      "sha256": "7d46173b7c2d61ce4696d0a51ca03461b2f312d575251dcee095b28bd8983c0a",
+      "pool_template_corr": 0.7898992300033569
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_20mA_30C_0/frame_0024.png",
+      "sha256": "b372549ada516445f5552045c522657c7206b4db643e7763d4428f095fb3129e",
+      "pool_template_corr": 0.7910588979721069
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_20mA_30C_0/frame_0041.png",
+      "sha256": "aa2315a372a4862913609483fcf85b35885e9f17389d798aadb4014cf46becc7",
+      "pool_template_corr": 0.7937108874320984
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_20mA_40C_0/frame_0001.png",
+      "sha256": "5f2c659cd0148935640c1aabb8034b799b0e914af93bcfe6d33fd6828ba32a42",
+      "pool_template_corr": 0.7533100843429565
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_20mA_40C_0/frame_0003.png",
+      "sha256": "07f0a23337a5b466b5469512998661e8764fe0f15f789c3ea82c070095a5fa35",
+      "pool_template_corr": 0.7703344821929932
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_20mA_40C_0/frame_0004.png",
+      "sha256": "10e054a76271afc79f72e66f5b9e92dc4e4adbe7580e9be0674b6ecc5407a6fd",
+      "pool_template_corr": 0.7809156775474548
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_20mA_40C_0/frame_0006.png",
+      "sha256": "b7ae3ac03c82517665253518b456b1ef496cd8cb62e2a1be818ed6edb9a942c4",
+      "pool_template_corr": 0.7912644743919373
+    },
+    {
+      "device": "M7",
+      "condition": "M7_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_20mA_40C_0/frame_0010.png",
+      "sha256": "8d64d66c76579df24aa4afa96d4635c2ee0e6f62bdf279e762a91add19913039",
+      "pool_template_corr": 0.792443573474884
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_30mA_20C_0/frame_0001.png",
+      "sha256": "be60befd64f11dc92b6a96838b8cccb39d2a06da487becba1a9cbe556567f8df",
+      "pool_template_corr": 0.758029580116272
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_30mA_20C_0/frame_0004.png",
+      "sha256": "ecd68eeb61cf7590724cae5a51c2cd48c73a316ba070fbaeea0589719abc6c00",
+      "pool_template_corr": 0.8084620833396912
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_30mA_20C_0/frame_0012.png",
+      "sha256": "af76d79100b17e0691b026802f9de9b4f401d898237bc1b062745979eadcaa67",
+      "pool_template_corr": 0.7966611981391907
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_30mA_20C_0/frame_0014.png",
+      "sha256": "8e5f58f150807f526a233c07a5bc81aef69449ae12d43161f62fffb07cf080f4",
+      "pool_template_corr": 0.8051497340202332
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_30mA_20C_0/frame_0015.png",
+      "sha256": "95ad3a97275463633d9902d29281fa493a916e48cdcf9389bc845c801e1e8327",
+      "pool_template_corr": 0.7647316455841064
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_30mA_30C_0/frame_0002.png",
+      "sha256": "a3f8f18faffd68ff0a16a0ad06457d3ffc7ea11e78bd5f1457ee3ba10fa638f2",
+      "pool_template_corr": 0.7871787548065186
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_30mA_30C_0/frame_0004.png",
+      "sha256": "425795921d298e9148decaad0d4822f5afc2765ce722efda265d375d3e89c20d",
+      "pool_template_corr": 0.76665198802948
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_30mA_30C_0/frame_0005.png",
+      "sha256": "a495a575f91935f7dc01462f261ad8fa3aa09a4e42347241cd440795372445e0",
+      "pool_template_corr": 0.7976287007331848
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_30mA_30C_0/frame_0015.png",
+      "sha256": "3a3a51e293af13925614b5fe948099799dc4f9081cd59dd51471176ba44666ff",
+      "pool_template_corr": 0.7964283227920532
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_30mA_30C_0/frame_0018.png",
+      "sha256": "16208188c39adb8b2156f48a1cabca4039280be789b4c69a0de31c71bdc86be6",
+      "pool_template_corr": 0.7880654335021973
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M7_30mA_40C_0/frame_0004.png",
+      "sha256": "bb28dae7b64b39d99710c2e7d8034a943f82a8749cd42aef0521be0ef3c949aa",
+      "pool_template_corr": 0.7767053842544556
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M7_30mA_40C_0/frame_0005.png",
+      "sha256": "6b513fe6d2205f69873a97e99beb70d17ea51a4f36549b4dec2b391d5deecf51",
+      "pool_template_corr": 0.7867342829704285
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M7_30mA_40C_0/frame_0015.png",
+      "sha256": "6a22c4f4d13d934d4b9a01c7abfa32ffdcaca8c58e44255d00ba43baa9272f6f",
+      "pool_template_corr": 0.8007251620292664
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M7_30mA_40C_0/frame_0016.png",
+      "sha256": "11a7b3d841fd20e086be8042f8d4ca4c507b27f77ec52ff1c7f9037a5db28dc8",
+      "pool_template_corr": 0.7623533010482788
+    },
+    {
+      "device": "M7",
+      "condition": "M7_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M7_30mA_40C_0/frame_0021.png",
+      "sha256": "3b0aa0ffb0c17c5f9e2bdd59af0c274de539b8b8aa17ab737796a157bda35505",
+      "pool_template_corr": 0.806152880191803
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_10mA_20C_0/frame_0004.png",
+      "sha256": "2f6425047cd8bdc4bbae332602f5615e21ee6c93d45516340d8196f10634da6a",
+      "pool_template_corr": 0.7250342965126038
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_10mA_20C_0/frame_0006.png",
+      "sha256": "4716421a861db87267d3b0f8b98af5600994179fb7cb6124ba4837bdce3726b7",
+      "pool_template_corr": 0.6960257291793823
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_10mA_20C_0/frame_0010.png",
+      "sha256": "a5da07e0a931d33eab6ae4ae9a82edfac0c62537d5c1dd1401a790f2471a4a89",
+      "pool_template_corr": 0.6938716173171997
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_10mA_20C_0/frame_0019.png",
+      "sha256": "4a4153fca9ec6f18f42249c04ed0c4fd6a0a9da7240bad4ebd15ffe350c75902",
+      "pool_template_corr": 0.7035978436470032
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_10mA_20C_0/frame_0024.png",
+      "sha256": "e6a0b59e5650bf04de0b4e2c0e446f3804a8edee47efe0d86e36d2572e1f72a3",
+      "pool_template_corr": 0.6494615077972412
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_10mA_30C_0/frame_0007.png",
+      "sha256": "331c43c5e2924095985a669ce7cf97e682ef61d36ef46ca660b092f4cbacff29",
+      "pool_template_corr": 0.7431781888008118
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_10mA_30C_0/frame_0009.png",
+      "sha256": "540d39d599f6e6797ae94f7c135876b7e91d96547e66da819e6b830493bc1323",
+      "pool_template_corr": 0.7483919858932495
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_10mA_30C_0/frame_0010.png",
+      "sha256": "1a7c06d16543700714433f11c5454ce209d337d6cfbff2b6ade6a13c0ee2741b",
+      "pool_template_corr": 0.7479901909828186
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_10mA_30C_0/frame_0012.png",
+      "sha256": "faa05775e5024a276a6c497c92f456224387c282f0b7a29bec92d5d06c342571",
+      "pool_template_corr": 0.7180099487304688
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_10mA_30C_0/frame_0020.png",
+      "sha256": "20eb3af2273a95983348246ecc1093b63a2eb18d84c349f0024e5ef1038d346c",
+      "pool_template_corr": 0.7036468982696533
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_10mA_40C_0/frame_0004.png",
+      "sha256": "0603a2cea0c81a01d442dd6fdc2881a4e309876d22c2b84daa0a91dab29c76f1",
+      "pool_template_corr": 0.7535628080368042
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_10mA_40C_0/frame_0006.png",
+      "sha256": "69170f03899ff6feb1c64c33806675def1950df0c6013a89509e2b4f12e0d4eb",
+      "pool_template_corr": 0.7388571500778198
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_10mA_40C_0/frame_0007.png",
+      "sha256": "3ec4702ff20ec868e1ff2bba29453bbcbecf0acded5ed20fc12d665b2ef83739",
+      "pool_template_corr": 0.760055661201477
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_10mA_40C_0/frame_0009.png",
+      "sha256": "77ba011311dd6ba6953ef033811cd4eabbcc5f75e4f689dcdacede7910ea8c7b",
+      "pool_template_corr": 0.7462587356567383
+    },
+    {
+      "device": "M8",
+      "condition": "M8_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_10mA_40C_0/frame_0012.png",
+      "sha256": "460c10046dfaf47eae4b91b1c9b6b5332372a6e07c0df8d6cd67038a192149c4",
+      "pool_template_corr": 0.7226871252059937
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_20mA_20C_0/frame_0001.png",
+      "sha256": "de349e0249579975a416fbf5053508422c2610f129c0818f765a9bd9f3e39960",
+      "pool_template_corr": 0.695144534111023
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_20mA_20C_0/frame_0003.png",
+      "sha256": "1388629d53568ea025ffa2eccf0b01955a3309d6096bbe9e87ff66644c5470e8",
+      "pool_template_corr": 0.7253745794296265
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_20mA_20C_0/frame_0005.png",
+      "sha256": "19f48e6ce747d7c5daa695e9ba990fbd8ccfa062fe3449907f93f45ad2250622",
+      "pool_template_corr": 0.7242514491081238
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_20mA_20C_0/frame_0006.png",
+      "sha256": "86c4c6d11201ece93f9e7dee326b79a1314a3c7769db0ac542d6ff6e1c384a82",
+      "pool_template_corr": 0.7321662902832031
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_20mA_20C_0/frame_0010.png",
+      "sha256": "0283713d49aa12fd8ce4a118618402a5a24f168de4f526e14f7be3c57b5346d3",
+      "pool_template_corr": 0.7348816394805908
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_20mA_30C_0/frame_0017.png",
+      "sha256": "cd1525cb08bf638e576b5c0c5117267fa956d122df3be10a728743ac791c9479",
+      "pool_template_corr": 0.7721906304359436
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_20mA_30C_0/frame_0018.png",
+      "sha256": "7d8f06e41f366dd2898717d039b338778b5fb98eb7b19b62f95a0b82ae04d61e",
+      "pool_template_corr": 0.7488577365875244
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_20mA_30C_0/frame_0021.png",
+      "sha256": "d0d1db907fb32c43799614e03ce325e2bdfaa1d3c59eb2aceb54aea022edcb32",
+      "pool_template_corr": 0.7459726333618164
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_20mA_30C_0/frame_0024.png",
+      "sha256": "2df41dddc0bc79a612f47da58aaf6cfd9a748912c21412906abda1494332ba73",
+      "pool_template_corr": 0.7651378512382507
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_20mA_30C_0/frame_0028.png",
+      "sha256": "cf26113a0e546408c8e8cf324afe87c230895a3b3ea3387bba7cc815de33064a",
+      "pool_template_corr": 0.7637584209442139
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_20mA_40C_0/frame_0001.png",
+      "sha256": "5494cb19b51b44d50b784639eae2789d67996b950f76a7dd4f987eca9d89cdbb",
+      "pool_template_corr": 0.74931800365448
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_20mA_40C_0/frame_0004.png",
+      "sha256": "e279763f0cb25425dd5d6d3301b16fedd39641fa6d5f319dbf925ca0787535f7",
+      "pool_template_corr": 0.7647305130958557
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_20mA_40C_0/frame_0013.png",
+      "sha256": "1a47ca98effd335e197238d5d3ec3bb2cc4d4344a2a8314c81d7a8bab4b26b0e",
+      "pool_template_corr": 0.771541178226471
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_20mA_40C_0/frame_0016.png",
+      "sha256": "2c217f82a3ef8d02db8906bd79caa0202350de8aa3ea34cfcbb73b058044bc68",
+      "pool_template_corr": 0.7793530225753784
+    },
+    {
+      "device": "M8",
+      "condition": "M8_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_20mA_40C_0/frame_0020.png",
+      "sha256": "e04d46896cfa0ff3683b6080f412ab538867a5dfd643e06b519977be46702bc3",
+      "pool_template_corr": 0.7811067700386047
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_30mA_20C_0/frame_0009.png",
+      "sha256": "5f1cc837a587301d21048632867bc75b0be38c2c24df21b7748851f8b0c84c84",
+      "pool_template_corr": 0.756520688533783
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_30mA_20C_0/frame_0013.png",
+      "sha256": "4e23e29fb0cd71aef08dda2b3b04cb20a901bb1857b53b8c684d8597c0e1a03e",
+      "pool_template_corr": 0.7565760612487793
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_30mA_20C_0/frame_0019.png",
+      "sha256": "98069df64aa4e3e81deaaed27f533c4197765b4f39edc5a2a2cd5b40113fbd04",
+      "pool_template_corr": 0.7413285970687866
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_30mA_20C_0/frame_0020.png",
+      "sha256": "7a128b07a16b12ce54f7ee48949912054d6f1d5d4dd507d05997687d5d31026d",
+      "pool_template_corr": 0.7612398862838745
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_30mA_20C_0/frame_0033.png",
+      "sha256": "0e8b48f20f9aec1863d77510a7e062b40a00beac79af76f39cfa7c7cd3a5203f",
+      "pool_template_corr": 0.7366071343421936
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_30mA_30C_0/frame_0002.png",
+      "sha256": "59dcbdda0ee876117ed1281446f225c420e82b8b7b45c0dc42c7dd464a291068",
+      "pool_template_corr": 0.7441366314888
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_30mA_30C_0/frame_0003.png",
+      "sha256": "3166666ec0b8f2d872ff8985d94d3a2ad4735ab226ac9c57da52fa02511f626a",
+      "pool_template_corr": 0.7601617574691772
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_30mA_30C_0/frame_0005.png",
+      "sha256": "b228c02bc0ab3cda1d36c07e1765755e7152a46c1e91a9b03568af15e1ffe694",
+      "pool_template_corr": 0.7664957642555237
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_30mA_30C_0/frame_0012.png",
+      "sha256": "d16d0e5901f119824234baba07e74b5a4b41f80539cdbb3723e9781a2aa65fcf",
+      "pool_template_corr": 0.7575975060462952
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_30mA_30C_0/frame_0016.png",
+      "sha256": "c38a00798441e684cbc72c93695016bb5982a20fbb0e2c0a7b04077b71b3a440",
+      "pool_template_corr": 0.7725889682769775
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M8_30mA_40C_0/frame_0002.png",
+      "sha256": "0c6c73978fb2d98f6be971512e0989f5567ad74251d635e8be26360d259baf5a",
+      "pool_template_corr": 0.7639727592468262
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M8_30mA_40C_0/frame_0015.png",
+      "sha256": "4ff59215fd7180745b54d1785abb8bcc3d19ade6e9ac673949fc9135d3ab7133",
+      "pool_template_corr": 0.7506042122840881
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M8_30mA_40C_0/frame_0017.png",
+      "sha256": "9c63a61f7d8efd8d3bddf6eb989317e4b9bbdb73d840a2c24f98d661d221f5ce",
+      "pool_template_corr": 0.6514554619789124
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M8_30mA_40C_0/frame_0021.png",
+      "sha256": "10630c15e6146a91aceb18ea7e5ffc5849b8902f551a36a87e8f9973f36e415d",
+      "pool_template_corr": 0.7800750732421875
+    },
+    {
+      "device": "M8",
+      "condition": "M8_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M8_30mA_40C_0/frame_0028.png",
+      "sha256": "8ab51652a9f138a3673a8548533f46f051b8595dc8f4e3593d010efd7776b55e",
+      "pool_template_corr": 0.7765272855758667
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_10mA_20C_0/frame_0004.png",
+      "sha256": "16fca55611b24f6674b739168955b44b2e9c5018e1f5ab2f67d4b88d2a97d90f",
+      "pool_template_corr": 0.8508521914482117
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_10mA_20C_0/frame_0006.png",
+      "sha256": "3231c797b88eceebbcd14dc0a31e4c06e0587e2b616364dce70171e27fd0a445",
+      "pool_template_corr": 0.8284984230995178
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_10mA_20C_0/frame_0015.png",
+      "sha256": "0647fd7950f07c79d136adc6e419d82a7120b302843d9a7d29e7497a69e4f70f",
+      "pool_template_corr": 0.863739550113678
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_10mA_20C_0/frame_0019.png",
+      "sha256": "d1d4269e0b5f6c21e5af3510ca02d363d3133b141e7411651048075ae7b48fdc",
+      "pool_template_corr": 0.8425054550170898
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_10mA_20C_0/frame_0020.png",
+      "sha256": "93af29280eed82fab838aae22fd9eb3dc168207f26f167823e11523af92f640d",
+      "pool_template_corr": 0.8623236417770386
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_10mA_30C_0/frame_0005.png",
+      "sha256": "6b9ffb5112604b2ed3ae75f39c2936aabac04ec744cc285b0ef39140654312cf",
+      "pool_template_corr": 0.7522721290588379
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_10mA_30C_0/frame_0008.png",
+      "sha256": "0175a8e452bb11d9d33ff168d76d303286eb247c534580648ce2a153ecbe0210",
+      "pool_template_corr": 0.7458387613296509
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_10mA_30C_0/frame_0011.png",
+      "sha256": "6bd4b6ce73f9da3e1378c4d7b2b85e97ab9b680c03bd8643ed84cc7ed9d02933",
+      "pool_template_corr": 0.7649598717689514
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_10mA_30C_0/frame_0015.png",
+      "sha256": "82a08c05a03469cf1bc59592c21e2890dc771ce06e4a809a3fbe68084b6037d8",
+      "pool_template_corr": 0.6931133270263672
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_10mA_30C_0/frame_0020.png",
+      "sha256": "0fa938112e925d8565ae05ddbf8fa99c73410ec46b30996039d7d1f0448aa219",
+      "pool_template_corr": 0.7608984708786011
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_10mA_40C_0/frame_0001.png",
+      "sha256": "8d12ebd1427bb8c05fb178d9437c275a1fb59a68d82ec9907109c181c68ce8e4",
+      "pool_template_corr": 0.7558367848396301
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_10mA_40C_0/frame_0002.png",
+      "sha256": "6a32e67d2d40b3b8df88bad289010c776e64051dc5d1b89cccac51e6e65d2c68",
+      "pool_template_corr": 0.7529562711715698
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_10mA_40C_0/frame_0004.png",
+      "sha256": "e3c0d9e4a107d1289b6f7986489a2e3cac78c3fe3495930f6af6fb236687de4c",
+      "pool_template_corr": 0.7367023229598999
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_10mA_40C_0/frame_0006.png",
+      "sha256": "3c8db447cc983eb14993f7e39140b1963563511ea1dd7fc0b0e77e1feb7d4d78",
+      "pool_template_corr": 0.6832477450370789
+    },
+    {
+      "device": "M9",
+      "condition": "M9_10mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_10mA_40C_0/frame_0007.png",
+      "sha256": "6f0078957551b028782250f251007c5027cba83b7272fc541d9897711a670eca",
+      "pool_template_corr": 0.719196081161499
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_20mA_20C_0/frame_0005.png",
+      "sha256": "122b39aa930ff1a9154b6ba60456cdfc60914946d8723323ef38f385b8a9a15f",
+      "pool_template_corr": 0.8457677364349365
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_20mA_20C_0/frame_0011.png",
+      "sha256": "d24837b4cbb1d94e87ed7d64e60262cc6a4d84f0e0e9e536deef5b7f9f921173",
+      "pool_template_corr": 0.8410530686378479
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_20mA_20C_0/frame_0012.png",
+      "sha256": "923cf25b6591050ff40368a53620b9ff14c312f6df50ad955a149c266a46908f",
+      "pool_template_corr": 0.7998880743980408
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_20mA_20C_0/frame_0015.png",
+      "sha256": "dc1b9f30d744f7accf962b7953886fac39ba64c64b72af4f9bc78ab3dd23587e",
+      "pool_template_corr": 0.8330038189888
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_20mA_20C_0/frame_0030.png",
+      "sha256": "051555e2bbcb58203a8d6a9bbe9f4d6707aa4fc84b3978382ee36fe9890ed4c2",
+      "pool_template_corr": 0.7917386889457703
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_20mA_30C_0/frame_0005.png",
+      "sha256": "360f0fab5ced6442edaebbc355b2e9c838ed92f96cdfa92905cc2d04150954a0",
+      "pool_template_corr": 0.7549485564231873
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_20mA_30C_0/frame_0006.png",
+      "sha256": "986a7ff5aa7efdad9ff38503fdb5207b97e7a4988c0f2a595817660d4c8ed750",
+      "pool_template_corr": 0.7458211779594421
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_20mA_30C_0/frame_0019.png",
+      "sha256": "e776efed30fbaa9055889576ea5df5159c92e728dc1856486a11e2e70cd3f73b",
+      "pool_template_corr": 0.7563549876213074
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_20mA_30C_0/frame_0021.png",
+      "sha256": "5957d96c31d9221bf669cf2a2625e3d531b1f2bae4b15a1a51da625601df0466",
+      "pool_template_corr": 0.7220578789710999
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_20mA_30C_0/frame_0022.png",
+      "sha256": "16e3d7dac5213c61adf6688f7ab97f88a3d2963899c0fdb857dd854f80756c47",
+      "pool_template_corr": 0.7693390846252441
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_20mA_40C_0/frame_0003.png",
+      "sha256": "f5f83dc4b5ed006a7c67b20aadf8d49caf5b071087146202093e22d9bff7bcb6",
+      "pool_template_corr": 0.7857513427734375
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_20mA_40C_0/frame_0004.png",
+      "sha256": "b7424ec054572e53ff88dd8ab54130cb5ce816f4e4d71a446cc0d331d6a0d518",
+      "pool_template_corr": 0.7689667344093323
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_20mA_40C_0/frame_0005.png",
+      "sha256": "1179baceb7b5d7b7ee7c285ac8c481adbb97d910784d895e2a279c561630ca23",
+      "pool_template_corr": 0.7203207015991211
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_20mA_40C_0/frame_0007.png",
+      "sha256": "832134e9e2c424d1b4a5f5a331c11cb0caa1c47393d2c35a0ccd533e41a31549",
+      "pool_template_corr": 0.7757024765014648
+    },
+    {
+      "device": "M9",
+      "condition": "M9_20mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_20mA_40C_0/frame_0008.png",
+      "sha256": "6392013a7a46609d39a9951fcf0e4c4fe6710b6ca994504cad9eb7070ca786ab",
+      "pool_template_corr": 0.7218030691146851
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_20C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_30mA_20C_0/frame_0002.png",
+      "sha256": "152204b8c5a7d9c19bd001a3d2e167d042dd5c7ffa9fa18357e4ed7355d28bc3",
+      "pool_template_corr": 0.7982350587844849
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_20C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_30mA_20C_0/frame_0003.png",
+      "sha256": "013ca720859c11b79c79aeb9c9713255fe11ac9b17de28b844713847c7f30bd6",
+      "pool_template_corr": 0.8255910277366638
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_20C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_30mA_20C_0/frame_0004.png",
+      "sha256": "9bf38fcb2c5dd26dfc9ddf28b9da02879614f93ccf8792ced531706cbf081ffd",
+      "pool_template_corr": 0.8117532134056091
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_20C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_30mA_20C_0/frame_0010.png",
+      "sha256": "349d21651a06a4f7a89afdf559b10514d47004fd9d72f06d2022cff1419accdc",
+      "pool_template_corr": 0.7911665439605713
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_20C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_30mA_20C_0/frame_0018.png",
+      "sha256": "6f92ad0110aebebf123cc0923c20571ee4480e18c9ee717ffaab944a85ea0054",
+      "pool_template_corr": 0.7617104053497314
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_30C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_30mA_30C_0/frame_0002.png",
+      "sha256": "988d3c24ad49f57a799bee0385c5b45f9da4d85d312059ce50b1b27be7dbe2d7",
+      "pool_template_corr": 0.7875657677650452
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_30C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_30mA_30C_0/frame_0003.png",
+      "sha256": "2b51e57a07cc930d93a5ec897633d27d1a3704a266dafa53eb1c52d4b1f25e9d",
+      "pool_template_corr": 0.7442101240158081
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_30C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_30mA_30C_0/frame_0004.png",
+      "sha256": "4294e22301d4df6019fc89dbcf767c864e5aa1ba92a690510ab47f6eef3b9779",
+      "pool_template_corr": 0.7568425536155701
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_30C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_30mA_30C_0/frame_0007.png",
+      "sha256": "06be54b3c4fca20a3290c41debb2e06a12ed6c1e97ce748332874f5acbc6a3b0",
+      "pool_template_corr": 0.7772670388221741
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_30C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_30mA_30C_0/frame_0008.png",
+      "sha256": "547cad556f52c32d17d39f54a8b491c66c472f57079660e844e5f903ba4d9b03",
+      "pool_template_corr": 0.7498412728309631
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_40C_0",
+      "pool_rank": 0,
+      "selected": true,
+      "relative_path": "M9_30mA_40C_0/frame_0001.png",
+      "sha256": "ade1813a1cd65081508f454d0aa2b21a7ef0d2402921bfcaa0d275a31c7b30ee",
+      "pool_template_corr": 0.7920862436294556
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_40C_0",
+      "pool_rank": 1,
+      "selected": false,
+      "relative_path": "M9_30mA_40C_0/frame_0004.png",
+      "sha256": "ea2f98feb235452c75f9d72ccf7b6ecf8b59f6a50d5e718a7596337539a5875d",
+      "pool_template_corr": 0.7828928232192993
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_40C_0",
+      "pool_rank": 2,
+      "selected": false,
+      "relative_path": "M9_30mA_40C_0/frame_0006.png",
+      "sha256": "a271d4b7b46c7975db9367e28872be872b3c02ee5cba9b6cb3cdba382aa036db",
+      "pool_template_corr": 0.7759208679199219
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_40C_0",
+      "pool_rank": 3,
+      "selected": false,
+      "relative_path": "M9_30mA_40C_0/frame_0008.png",
+      "sha256": "c7f85e84a8a400fed916751c0c025a8d8ddc1e0ce52b15cf6b571e9e604d6372",
+      "pool_template_corr": 0.7792655229568481
+    },
+    {
+      "device": "M9",
+      "condition": "M9_30mA_40C_0",
+      "pool_rank": 4,
+      "selected": false,
+      "relative_path": "M9_30mA_40C_0/frame_0010.png",
+      "sha256": "90479fc8948591eb5ddad02c1cc3db045fcc0806c0fb94104a28255284090b4e",
+      "pool_template_corr": 0.7687956094741821
+    }
+  ],
+  "preliminary_template_sha256": "5ec26b22a075f78d493413fc9794ba7be50f766c6f2b531104f2d503a0a9e1db",
+  "probe_rule": "all dataset images not listed in enrollment_pool_entries",
+  "base_geometry_payload_sha256": "6bb6714e374210ed68633ac0c68d80b57f9bd435d6540b1ff59a33791a254a7a",
+  "payload_sha256": "674fdd3e5b9f60ff4288f7f1ab5247d49e4819ea073120b1df2e8cac935e251a",
+  "candidate_profile_sha256": "626046f1fce87f4b1c6e9a2357c1cdcd3687578504522fe4b2a366376bb61753",
+  "candidate_count": 8192,
+  "eligible_count": 8192,
+  "quality_template_corr_min": 0.4,
+  "pose_template_sha256": "9c22ad3a70e8b19edcc1edef5c660d82ba378142f044ad953eda45a0ad2df49d",
+  "pose_trigger_quantile": 0.1,
+  "pose_trigger_corr": 0.6604940295219421,
+  "pose_search": {
+    "angle_deg": [
+      -30,
+      30,
+      3
+    ],
+    "scale": [
+      0.95,
+      1.05,
+      0.025
+    ],
+    "translation_32px": [
+      -1,
+      1,
+      1
+    ]
+  },
+  "pose_min_common_corr_gain": 0.05,
+  "pose_refined_min_common_corr": 0.5248820781707764,
+  "pose_refined_min_common_corr_rule": "minimum common-template correlation among the 81 selected enrollment images",
+  "leakage_control": "the preliminary selector reads enrollment_pool_entries only; common template and candidate profile use enrollment_entries only; every pool image is permanently excluded from probes",
+  "candidate_profile_selection_rule": "all fixed candidates are eligible; each device selects 2048 positions using only its own enrollment stability and projection margin",
+  "cross_device_enrollment_information_used": false,
+  "experiment_note": "Stability-only enrollment control. No population balance, inter-HD, or non-target-device response is used to select a device's support."
+}

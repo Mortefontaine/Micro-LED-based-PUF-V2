@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ultralytics/
+.matplotlib/
+work/
+local_state/
+*.key
+*.pem
+*.p12
+*.pfx
+*.secret
+private_audit/
+.DS_Store
+Thumbs.db

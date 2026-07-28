@@ -1,0 +1,5 @@
+stage,file_count,bytes,scope
+00_raw_rgb_M1_M6,108,7711676,compact M1-M6 sample; not full reported M1-M9 corpus
+01_yolo_detector_sample,39,1439206,compact M1-M6 sample; not full reported M1-M9 corpus
+02_stn_pairs_M1_M6,217,17461635,compact M1-M6 sample; not full reported M1-M9 corpus
+03_aligned_puf_M1_M6,108,8239916,compact M1-M6 sample; not full reported M1-M9 corpus
