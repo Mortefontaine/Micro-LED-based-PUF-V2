@@ -1,10 +1,10 @@
 # Micro-LED PUF with device-local stability-only enrollment
 
-This lightweight research release contains the YOLO detector, STN alignment,
-PUF extraction and fuzzy-extractor implementation used for a nine-device
-micro-LED PUF study. A small M1–M6 image subset is included for inspection and
-smoke tests; the frozen model files and reported metrics were obtained from the
-full M1–M9 experiment.
+This lightweight code release contains the YOLO detector, STN alignment, PUF
+extraction and fuzzy-extractor implementation used for a nine-device micro-LED
+PUF study. A small M1–M6 image subset is included only for executable examples
+and smoke tests. The complete experimental dataset and publication figure data
+are archived separately and are intentionally not mirrored in this repository.
 
 ## What is different in this release
 
@@ -27,34 +27,24 @@ hyperparameters and candidate universe are shared.
 ## Repository map
 
 ```text
-code/       PUF, enrollment, fuzzy extractor and evaluation code
+code/       PUF, enrollment and fuzzy-extractor runtime code
 training/   YOLO/STN dataset preparation and training implementations
 models/     frozen YOLO, STN, transform payload and stability-only profile
 data/       small M1–M6 samples for the four main stages
-results/    compact M1–M9 reported results and Origin-ready CSV files
 docs/       pipeline, training, reproducibility and security notes
 scripts/    release indexing and validation helpers
 tests/      lightweight smoke tests
+validation/ clean-room M1–M6 execution record
 ```
 
-## Reported M1–M9 results
+## Data and result availability
 
-| Metric | Result |
-|---|---:|
-| Reliability | 99.7829% |
-| Mean probe/reference intra-HD | 0.2171% |
-| Reference uniformity | 50.1139% |
-| Device-balanced probe uniformity | 50.1199% |
-| Bit aliasing | 50.1506% |
-| Common-candidate uniqueness | 53.8615% |
-| Exact fuzzy-extractor recovery | 100% (3,645/3,645 probes) |
-| ROC AUC / empirical EER | 1.000 / 0 |
-
-`results/probe_to_probe_hd/` also contains the legacy figure definition:
-output-code intra-HD `0.4410 ± 1.2980%` and inter-HD
-`49.9468 ± 0.8997%`. That inter-HD describes separation of the final output
-codes. Since devices may use different selected positions, it must not be
-presented as common-coordinate physical uniqueness.
+This repository is the executable code component of the release. It does not
+duplicate the publication-scale raw data, processed figure tables, Origin
+projects or rendered publication figures. The separate data archive should be
+cited for those artifacts. `validation/cleanroom_20260728/` contains only the
+small run record needed to demonstrate that the included M1–M6 example closes
+the complete software loop.
 
 ## Installation
 
@@ -122,14 +112,10 @@ reproduces the publication statistics.
   candidate universe without using inter-device separation.
 - `code/microled_single_shot_key.py`: enrolls a device and regenerates its
   key from a one-shot probe.
-- `code/microled_eval_single_shot.py`: evaluates the frozen M1–M9 split when
-  the full aligned dataset is supplied.
-- `code/microled_visualize_fuzzy_repair.py`: exports raw, repaired and flip
-  maps.
 
 Run `python <script> --help` for the exact command-line interface. The compact
-data are intended for smoke tests; reproducing the published numerical table
-requires the full corpus named in the frozen split manifest.
+data are intended for smoke tests; publication-scale evaluation belongs with
+the separately archived full dataset.
 
 Structural and end-to-end checks:
 
@@ -141,8 +127,8 @@ python scripts/smoke_single_shot.py
 ## Claim boundary
 
 This is research code. The fuzzy extractor demonstrates stable, verified,
-fail-closed key regeneration. The reported results do not constitute a
-standalone proof of 128-bit PUF min-entropy, a production cryptographic
-certification, or resistance to invasive physical attacks. Public helper-data
-leakage and the entropy assumption must be treated separately; see
-`docs/SECURITY_BOUNDARY.md`.
+fail-closed key regeneration. Neither this code release nor its compact sample
+constitutes a standalone proof of 128-bit PUF min-entropy, a production
+cryptographic certification, or resistance to invasive physical attacks.
+Public helper-data leakage and the entropy assumption must be treated
+separately; see `docs/SECURITY_BOUNDARY.md`.

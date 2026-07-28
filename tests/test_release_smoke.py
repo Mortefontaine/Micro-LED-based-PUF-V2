@@ -39,14 +39,17 @@ def test_compact_stn_pairs_exist() -> None:
         assert (pair_csv.parent / row["target_relative"]).is_file()
 
 
-def test_headline_summary_declares_no_probe_overlap() -> None:
-    path = ROOT / "results" / "single_shot" / "summary_metrics.csv"
-    with path.open("r", encoding="utf-8", newline="") as stream:
-        rows = {(row["group"], row["metric"]): row["value"] for row in csv.DictReader(stream)}
-    assert rows[("dataset", "independent_devices")] == "9"
-    assert rows[("dataset", "enrollment_images")] == "81"
-    assert rows[("dataset", "probe_images")] == "3645"
-    assert float(rows[("fuzzy", "all_probe_exact_recovery")]) == 100.0
+def test_core_puf_entry_points_are_present() -> None:
+    required = [
+        "microled_align.py",
+        "microled_expanded_align.py",
+        "microled_puf.py",
+        "microled_puf_key.py",
+        "microled_prepare_stability_only_profile.py",
+        "microled_single_shot_key.py",
+    ]
+    for name in required:
+        assert (ROOT / "code" / name).is_file()
 
 
 def test_closed_loop_entry_points_are_present() -> None:
