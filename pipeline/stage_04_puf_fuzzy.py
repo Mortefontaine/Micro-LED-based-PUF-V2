@@ -87,7 +87,7 @@ def main() -> None:
             profile,
             quality_template_corr_min=args.quality_corr_min,
             models_dir=models_dir,
-            require_unanimous=False,
+            require_unanimous=True,
         )
         manifest_path = manifests_dir / f"{device}.json"
         manifest.save(manifest_path, auth_key=auth_key)
@@ -140,7 +140,7 @@ def main() -> None:
         "identity_bound_output_bits_used_by_protocol": 128,
         "quality_corr_min": args.quality_corr_min,
         "selection_rule": "within_device_stability_only",
-        "sample_selection_requires_unanimous_enrollment_bits": False,
+        "sample_selection_requires_unanimous_enrollment_bits": True,
         "inter_device_information_used_for_selection": False,
     }
     summary_path = stage_dir / "summary.json"

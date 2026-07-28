@@ -23,7 +23,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--detector-manifest", type=Path, default=None)
     parser.add_argument("--stn-manifest", type=Path, default=None)
     parser.add_argument("--device", default="cpu")
-    parser.add_argument("--min-valid-fraction", type=float, default=0.0)
+    parser.add_argument("--min-valid-fraction", type=float, default=0.98)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--force", action="store_true")
     return parser.parse_args()
