@@ -1,11 +1,7 @@
-"""Single-image soft-decision key regeneration for the micro-LED weak PUF.
+"""Single-image 2,048-bit response reproduction with one LDPC fuzzy extractor.
 
-This research prototype uses a public LDPC syndrome as helper data.  Device
-enrollment can use one aligned image per operating condition; runtime uses one
-aligned image.  The enrolled response and derived root key are never stored.
-
-The included normalized min-sum decoder is intended for method evaluation.
-Replace it with a reviewed LDPC/Polar implementation on production hardware.
+Enrollment reads aligned images from the declared operating conditions.
+Reproduction reads one aligned image and the enrollment manifest.
 """
 
 from __future__ import annotations
@@ -25,7 +21,7 @@ from typing import Any, Sequence
 import numpy as np
 
 from microled_puf import PUFExtractor, condition_name, device_name, iter_images, majority_vote, read_rgb01
-from microled_puf_key import (
+from microled_response import (
     apply_candidate_selection,
     b64decode,
     b64encode,
@@ -72,7 +68,7 @@ def unpack_helper_bits(text: str, count: int) -> np.ndarray:
 def read_auth_key(path: Path) -> bytes:
     key = path.read_bytes()
     if len(key) < 32:
-        raise ValueError("Manifest authentication key must contain at least 32 bytes.")
+        raise ValueError("Manifest tag key must contain at least 32 bytes.")
     return key
 
 
@@ -229,7 +225,7 @@ class SingleShotManifest:
             if not hmac.compare_digest(expected, supplied):
                 raise ValueError("Manifest authentication failed.")
         elif require_auth:
-            raise ValueError("A protected manifest authentication key is required.")
+            raise ValueError("A manifest tag key is required.")
         manifest = cls(**json.loads(raw.decode("utf-8")))
         manifest.validate()
         return manifest
@@ -642,7 +638,10 @@ def parse_args() -> argparse.Namespace:
     reproduce_cmd.add_argument("--decoder-alpha", type=float, default=0.80)
     reproduce_cmd.add_argument("--show-root-key", action="store_true")
 
-    init_cmd = sub.add_parser("init-auth-key", help="Create a 256-bit manifest authentication key that the operator must protect.")
+    init_cmd = sub.add_parser(
+        "init-auth-key",
+        help="Create a 256-bit manifest tag key.",
+    )
     init_cmd.add_argument("--out", type=Path, required=True)
     return parser.parse_args()
 
@@ -651,7 +650,7 @@ def main() -> None:
     args = parse_args()
     if args.command == "init-auth-key":
         if args.out.exists():
-            raise SystemExit(f"Refusing to overwrite existing authentication key: {args.out}")
+            raise SystemExit(f"Refusing to overwrite existing tag key: {args.out}")
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_bytes(secrets.token_bytes(32))
         print(json.dumps({"manifest_auth_key": str(args.out), "bytes": 32}, indent=2))
@@ -660,7 +659,10 @@ def main() -> None:
         if args.per_condition != 1:
             raise SystemExit("The final scheme requires --per-condition 1.")
         if args.manifest_auth_key is None and not args.allow_unsigned_manifest:
-            raise SystemExit("Provide --manifest-auth-key, or explicitly use --allow-unsigned-manifest for research only.")
+            raise SystemExit(
+                "Provide --manifest-auth-key, or use "
+                "--allow-unsigned-manifest."
+            )
         all_rows = enrollment_response_rows(args.input, args.payload, args.source_device)
         source_devices = sorted({device_name(str(row["condition"])) for row in all_rows})
         if args.source_device:
@@ -697,7 +699,9 @@ def main() -> None:
         return
 
     if args.manifest_auth_key is None and not args.allow_unsigned_manifest:
-        raise SystemExit("Provide --manifest-auth-key, or explicitly use --allow-unsigned-manifest for research only.")
+        raise SystemExit(
+            "Provide --manifest-auth-key, or use --allow-unsigned-manifest."
+        )
     auth_key = read_auth_key(args.manifest_auth_key) if args.manifest_auth_key is not None else None
     manifest = SingleShotManifest.load(
         args.manifest,

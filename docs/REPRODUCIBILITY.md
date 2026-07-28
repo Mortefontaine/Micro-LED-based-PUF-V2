@@ -1,27 +1,26 @@
-# Reproducibility levels
+# Execution levels
 
-## Level 1: no GPU, no retraining
+## Source and package checks
 
-- Inspect all result CSV/JSON/Markdown files.
-- Verify hashes with `python scripts/validate_release.py`.
-- Parse the frozen enrollment split and device mapping.
-- Regenerate table- and result-driven figures where supported.
+```bash
+python scripts/validate_release.py
+```
 
-## Level 2: frozen inference
+## Fuzzy-extractor check
 
-Install PyTorch, OpenCV and Ultralytics. Run the frozen detector/STN and the
-PUF enrollment/reproduction interface on the released sample.
+```bash
+python scripts/smoke_single_shot.py
+```
 
-## Level 3: model-training smoke test
+## Compact model-training and pipeline check
 
-The representative detector and STN training subsets exercise the public data
-loaders and training programs. They are too small to reproduce the final
-model quality.
+```bash
+python pipeline/run_all_m1_m6.py --force
+```
 
-## Level 4: full paper statistics
+This command trains for one epoch on the compact M1-M6 subset, aligns the
+included raw images, creates six enrollment manifests and processes the
+separate compact probe images.
 
-The image archive used for 3,645 normal-temperature probes and 1,800
-high-temperature probes is not stored in this lightweight GitHub release.
-Complete per-probe and aggregate outputs are included. If a journal requires
-image-level re-estimation, publish the full archive separately under a DOI and
-record its URL and checksum here.
+The complete experimental image archive is maintained separately from this
+code repository.

@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CLI = ROOT / "code" / "microled_single_shot_key.py"
+CLI = ROOT / "code" / "microled_fuzzy_extractor.py"
 ALIGNED = ROOT / "data" / "03_aligned_puf_M1_M6"
 PAYLOAD = ROOT / "models" / "expanded_luma_support_payload.npz"
 PROFILE = ROOT / "models" / "stability_only_candidate_profile.npz"

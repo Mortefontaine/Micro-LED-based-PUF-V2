@@ -1,38 +1,21 @@
-# Stability-only enrollment protocol
+# Stability-only enrollment
 
-## Frozen before device enrollment
+The following inputs are fixed before per-device enrollment:
 
-- YOLO detector and STN weights;
-- transform payload and the ordered 8,192 candidate projections;
-- number of enrollment images (nine);
-- number of selected bits (2,048);
-- stability, margin, quality-gate and decoder parameters.
+- YOLO and STN weights;
+- transform payload and ordered 8,192 candidate projections;
+- number of enrollment images;
+- 2,048-bit response length;
+- stability, margin, image-quality and decoder parameters.
 
-## Device-local enrollment
+For each device, the code evaluates only that device's declared enrollment
+images. Each candidate receives a within-device agreement value and an average
+absolute projection margin. Candidates are ordered deterministically by these
+values, and the first 2,048 positions are stored in the device manifest.
 
-For a device \(d\), only its nine declared enrollment images are processed.
-For candidate \(j\), the implementation computes the repeated binary outcome,
-within-device flip/error count and projection margin. Candidates are ranked
-deterministically by the frozen stability/margin rule, and the top 2,048 are
-selected.
+Responses from other devices and inter-device Hamming distances are not used
+by the position-selection function.
 
-No response from another device, no probe image, no class label separation and
-no inter-device Hamming distance enters the ranking.
-
-The enrollment output contains public helper data, the selected position
-indices, frozen configuration/model digests and a key-verification tag. It does
-not store the enrolled 2,048-bit response or regenerated root key.
-
-## Regeneration
-
-A one-shot probe passes through the same detector, alignment and projection
-pipeline. Its selected 2,048 noisy bits and the public helper data enter the
-decoder. A candidate 128-bit key is released only if decoding and the
-verification tag succeed; otherwise the operation fails closed.
-
-## Evaluation
-
-The full result uses 9 devices, 81 selected enrollment images and 3,645
-held-out one-shot probes. The complete enrollment pool is excluded from the
-probe set. Position selection is run before evaluating reliability,
-uniformity, uniqueness, bit aliasing, fuzzy recovery and ROC/EER.
+A probe image follows the same alignment and projection steps. Its 2,048
+values and the stored helper data are passed to the LDPC decoder, followed by
+HKDF-SHA256 output derivation and tag comparison.

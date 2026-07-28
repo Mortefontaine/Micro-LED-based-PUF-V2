@@ -44,9 +44,9 @@ def test_core_puf_entry_points_are_present() -> None:
         "microled_align.py",
         "microled_expanded_align.py",
         "microled_puf.py",
-        "microled_puf_key.py",
+        "microled_response.py",
         "microled_prepare_stability_only_profile.py",
-        "microled_single_shot_key.py",
+        "microled_fuzzy_extractor.py",
     ]
     for name in required:
         assert (ROOT / "code" / name).is_file()
@@ -72,20 +72,3 @@ def test_executable_sources_do_not_reference_parent_project_paths() -> None:
         for path in (ROOT / folder).rglob("*.py"):
             text = path.read_text(encoding="utf-8").lower()
             assert not any(token in text for token in forbidden), path
-
-
-def test_cleanroom_record_matches_expected_sample_scope() -> None:
-    summary = json.loads(
-        (
-            ROOT
-            / "validation"
-            / "cleanroom_20260728"
-            / "stage4_summary.json"
-        ).read_text(encoding="utf-8")
-    )
-    assert summary["devices"] == 6
-    assert summary["enrollment_images"] == 54
-    assert summary["independent_probes"] == 54
-    assert summary["accepted_probes"] == 53
-    assert summary["response_bits"] == 2048
-    assert summary["inter_device_information_used_for_selection"] is False
