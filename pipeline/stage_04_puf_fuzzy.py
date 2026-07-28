@@ -25,10 +25,10 @@ from microled_fuzzy_extractor import (  # noqa: E402
     SingleShotManifest,
     enroll_single_shot,
     enrollment_response_rows,
+    payload_digest,
     reproduce_single_shot,
     select_per_condition,
 )
-from microled_response import payload_digest  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:

@@ -1,219 +1,335 @@
-"""YOLO crop + STN alignment for the release micro-LED PUF pipeline."""
+"""YOLO11n localization plus expanded-background RGB STN alignment."""
 
 from __future__ import annotations
 
 import argparse
-import math
-import re
+import csv
+import os
+import sys
 from pathlib import Path
 
 import numpy as np
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
-from PIL import Image
+from PIL import Image, ImageDraw
 
 
-IMAGE_SIZE = 256
-PREDICTOR_SIZE = 96
-IMAGE_EXTS = {".bmp", ".jpg", ".jpeg", ".png", ".tif", ".tiff"}
+PACKAGE_ROOT = Path(__file__).resolve().parents[1]
+LOCAL_YOLO_DEPS = PACKAGE_ROOT / ".yolo_deps"
+if LOCAL_YOLO_DEPS.is_dir():
+    # Keep the environment's compatible torch/torchvision ahead of the local
+    # target directory, while still making Ultralytics available.
+    sys.path.append(str(LOCAL_YOLO_DEPS))
+os.environ.setdefault("YOLO_CONFIG_DIR", str(PACKAGE_ROOT / ".ultralytics_config"))
+
+import cv2  # noqa: E402
+
+from microled_stn import (  # noqa: E402
+    IMAGE_SIZE,
+    load_stn,
+    predictor_features,
+)
 
 
-def natural_key(text: str) -> list[object]:
-    return [int(part) if part.isdigit() else part.lower() for part in re.split(r"(\d+)", text)]
+def _pure_torch_nms(boxes: torch.Tensor, scores: torch.Tensor, iou_threshold: float) -> torch.Tensor:
+    """CPU fallback for environments whose torchvision NMS binary is unavailable."""
+    if boxes.numel() == 0:
+        return torch.empty((0,), dtype=torch.long, device=boxes.device)
+    x1, y1, x2, y2 = boxes.unbind(1)
+    areas = (x2 - x1).clamp(min=0) * (y2 - y1).clamp(min=0)
+    order = scores.argsort(descending=True)
+    keep: list[torch.Tensor] = []
+    while order.numel() > 0:
+        current = order[0]
+        keep.append(current)
+        if order.numel() == 1:
+            break
+        remaining = order[1:]
+        xx1 = torch.maximum(x1[current], x1[remaining])
+        yy1 = torch.maximum(y1[current], y1[remaining])
+        xx2 = torch.minimum(x2[current], x2[remaining])
+        yy2 = torch.minimum(y2[current], y2[remaining])
+        intersection = (xx2 - xx1).clamp(min=0) * (yy2 - yy1).clamp(min=0)
+        union = areas[current] + areas[remaining] - intersection
+        iou = intersection / union.clamp(min=torch.finfo(boxes.dtype).eps)
+        order = remaining[iou <= iou_threshold]
+    return torch.stack(keep).to(dtype=torch.long)
 
 
-def iter_images(path: Path) -> list[Path]:
-    if path.is_file():
-        return [path]
-    return sorted(
-        [p for p in path.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_EXTS],
-        key=lambda p: natural_key(str(p)),
-    )
+def detect_box(
+    path: Path,
+    detector,
+    device: str,
+    early_intensity: bool = False,
+) -> tuple[np.ndarray, tuple[float, float, float, float]]:
+    bgr = cv2.imread(str(path))
+    if bgr is None:
+        raise RuntimeError(f"Unable to read {path}")
+    if early_intensity:
+        values = bgr.astype(np.float32)
+        luma = 0.0722 * values[:, :, 0] + 0.7152 * values[:, :, 1] + 0.2126 * values[:, :, 2]
+        gray = np.uint8(np.clip(np.rint(luma), 0, 255))
+        bgr = np.repeat(gray[:, :, None], 3, axis=2)
+    result = detector.predict(bgr, conf=0.25, verbose=False, device=device)[0]
+    boxes = result.boxes.xywh.cpu().numpy()
+    if len(boxes) == 0:
+        raise RuntimeError(f"No detection for {path}")
+    return bgr, tuple(float(value) for value in boxes[0])
 
 
-def relative_output_path(path: Path, input_root: Path, output_root: Path) -> Path:
-    if input_root.is_file():
-        return output_root / path.with_suffix(".png").name
-    return output_root / path.relative_to(input_root).with_suffix(".png")
+def square_bounds(
+    center_x: float,
+    center_y: float,
+    requested_side: float,
+    image_width: int,
+    image_height: int,
+) -> tuple[int, int, int, int]:
+    # Match the released YOLO crop exactly: truncate each floating boundary
+    # independently instead of rounding the center/side first. A one-pixel
+    # shift can change the STN angle branch for the near-fourfold cross.
+    x1 = max(0, int(center_x - requested_side / 2))
+    y1 = max(0, int(center_y - requested_side / 2))
+    x2 = min(image_width, int(center_x + requested_side / 2))
+    y2 = min(image_height, int(center_y + requested_side / 2))
+    return x1, y1, x2, y2
 
 
-def pil_rgb(path: Path, size: int = IMAGE_SIZE) -> Image.Image:
-    img = Image.open(path).convert("RGB")
-    if img.size != (size, size):
-        img = img.resize((size, size), Image.Resampling.BILINEAR)
-    return img
-
-
-def radial_residual_np(x: np.ndarray) -> np.ndarray:
-    h, w = x.shape
-    yy, xx = np.indices((h, w), dtype=np.float32)
-    center = (h - 1) / 2.0
-    bins = np.floor(np.sqrt((xx - center) ** 2 + (yy - center) ** 2)).astype(np.int32).ravel()
-    flat = x.ravel()
-    sums = np.bincount(bins, weights=flat)
-    counts = np.bincount(bins)
-    means = sums / np.maximum(counts, 1)
-    return (flat - means[bins]).reshape(h, w).astype(np.float32)
-
-
-def sobel_mag_np(x: np.ndarray) -> np.ndarray:
-    xp = np.pad(x, 1, mode="edge")
-    gx = -xp[:-2, :-2] - 2 * xp[1:-1, :-2] - xp[2:, :-2] + xp[:-2, 2:] + 2 * xp[1:-1, 2:] + xp[2:, 2:]
-    gy = -xp[:-2, :-2] - 2 * xp[:-2, 1:-1] - xp[:-2, 2:] + xp[2:, :-2] + 2 * xp[2:, 1:-1] + xp[2:, 2:]
-    return np.sqrt(gx * gx + gy * gy).astype(np.float32)
-
-
-def zscore(x: np.ndarray) -> np.ndarray:
-    return ((x - x.mean()) / (x.std() + 1e-6)).astype(np.float32)
-
-
-def blue_predictor_features(img: Image.Image) -> torch.Tensor:
-    arr = np.asarray(img.resize((PREDICTOR_SIZE, PREDICTOR_SIZE), Image.Resampling.BILINEAR), dtype=np.float32) / 255.0
-    blue = arr[:, :, 2]
-    residual = radial_residual_np(blue)
-    dark = np.clip(-residual, 0, None)
-    edge = sobel_mag_np(residual)
-    return torch.from_numpy(np.stack([zscore(blue), zscore(residual), zscore(dark), zscore(edge)], axis=0).astype(np.float32))
-
-
-class SpatialHeadSimilaritySTN(nn.Module):
-    def __init__(self, max_angle_deg: float = 180.0, max_translate: float = 0.20, max_log_scale: float = 0.35) -> None:
-        super().__init__()
-        self.max_angle = math.radians(max_angle_deg)
-        self.max_translate = max_translate
-        self.max_log_scale = max_log_scale
-        self.features = nn.Sequential(
-            nn.Conv2d(4, 24, 5, stride=2, padding=2),
-            nn.GroupNorm(6, 24),
-            nn.SiLU(inplace=True),
-            nn.Conv2d(24, 48, 3, stride=2, padding=1),
-            nn.GroupNorm(8, 48),
-            nn.SiLU(inplace=True),
-            nn.Conv2d(48, 96, 3, stride=2, padding=1),
-            nn.GroupNorm(12, 96),
-            nn.SiLU(inplace=True),
-            nn.Conv2d(96, 128, 3, stride=2, padding=1),
-            nn.GroupNorm(16, 128),
-            nn.SiLU(inplace=True),
-        )
-        self.head = nn.Sequential(
-            nn.Flatten(),
-            nn.Linear(128 * 6 * 6, 256),
-            nn.SiLU(inplace=True),
-            nn.Dropout(p=0.05),
-            nn.Linear(256, 64),
-            nn.SiLU(inplace=True),
-            nn.Linear(64, 4),
-        )
-
-    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
-        raw = self.head(self.features(x))
-        angle = self.max_angle * torch.tanh(raw[:, 0])
-        scale = torch.exp(self.max_log_scale * torch.tanh(raw[:, 1]))
-        tx = self.max_translate * torch.tanh(raw[:, 2])
-        ty = self.max_translate * torch.tanh(raw[:, 3])
-        c = torch.cos(angle) * scale
-        s = torch.sin(angle) * scale
-        theta = torch.zeros((x.shape[0], 2, 3), dtype=x.dtype, device=x.device)
-        theta[:, 0, 0] = c
-        theta[:, 0, 1] = -s
-        theta[:, 1, 0] = s
-        theta[:, 1, 1] = c
-        theta[:, 0, 2] = tx
-        theta[:, 1, 2] = ty
-        return theta, torch.stack([angle, scale, tx, ty], dim=1)
-
-
-def load_stn(checkpoint_path: Path, device: torch.device) -> SpatialHeadSimilaritySTN:
-    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=True)
-    model = SpatialHeadSimilaritySTN(
-        checkpoint.get("max_angle_deg", 180.0),
-        checkpoint.get("max_translate", 0.20),
-        checkpoint.get("max_log_scale", 0.35),
-    ).to(device)
-    state = checkpoint.get("model_state", checkpoint)
-    model.load_state_dict(state)
-    model.eval()
-    return model
+def rgb_crop(bgr: np.ndarray, bounds: tuple[int, int, int, int], size: int) -> Image.Image:
+    x1, y1, x2, y2 = bounds
+    crop = cv2.resize(bgr[y1:y2, x1:x2], (size, size), interpolation=cv2.INTER_AREA)
+    return Image.fromarray(cv2.cvtColor(crop, cv2.COLOR_BGR2RGB))
 
 
 @torch.no_grad()
-def stn_align_image(model: nn.Module, crop: Image.Image, device: torch.device) -> tuple[Image.Image, dict[str, float]]:
-    crop = crop.convert("RGB").resize((IMAGE_SIZE, IMAGE_SIZE), Image.Resampling.BILINEAR)
-    predictor = blue_predictor_features(crop)[None].to(device)
-    rgb = np.asarray(crop, dtype=np.float32) / 255.0
-    source = torch.from_numpy(np.transpose(rgb, (2, 0, 1)))[None].to(device)
-    theta, params = model(predictor)
-    grid = F.affine_grid(theta, source.shape, align_corners=False)
-    warped = F.grid_sample(source, grid, mode="bilinear", padding_mode="zeros", align_corners=False)
-    arr = np.transpose(warped[0].detach().cpu().numpy(), (1, 2, 0))
-    out = Image.fromarray(np.uint8(np.clip(arr, 0, 1) * 255))
+def align_pair(
+    model,
+    bgr: np.ndarray,
+    box: tuple[float, float, float, float],
+    device: torch.device,
+    expanded_margin: float,
+) -> tuple[Image.Image, Image.Image, Image.Image, Image.Image, dict[str, float]]:
+    image_height, image_width = bgr.shape[:2]
+    center_x, center_y, width, height = box
+    tight_side = max(width, height, float(IMAGE_SIZE))
+    tight_bounds = square_bounds(center_x, center_y, tight_side, image_width, image_height)
+    expanded_bounds = square_bounds(
+        center_x,
+        center_y,
+        tight_side * expanded_margin,
+        image_width,
+        image_height,
+    )
+
+    tight = rgb_crop(bgr, tight_bounds, IMAGE_SIZE)
+    expanded_size = max(IMAGE_SIZE, int(round(IMAGE_SIZE * expanded_margin)))
+    expanded = rgb_crop(bgr, expanded_bounds, expanded_size)
+
+    predictor = predictor_features(tight)[None].to(device)
+    theta_tight, params = model(predictor)
+
+    tight_rgb = np.asarray(tight, dtype=np.float32) / 255.0
+    tight_source = torch.from_numpy(tight_rgb.transpose(2, 0, 1))[None].to(device)
+    baseline_grid = F.affine_grid(theta_tight, tight_source.shape, align_corners=False)
+    baseline = F.grid_sample(
+        tight_source,
+        baseline_grid,
+        mode="bilinear",
+        padding_mode="zeros",
+        align_corners=False,
+    )
+
+    tx1, ty1, tx2, ty2 = tight_bounds
+    ex1, ey1, ex2, ey2 = expanded_bounds
+    tight_w = float(tx2 - tx1)
+    tight_h = float(ty2 - ty1)
+    expanded_w = float(ex2 - ex1)
+    expanded_h = float(ey2 - ey1)
+    tight_cx = (tx1 + tx2) / 2.0
+    tight_cy = (ty1 + ty2) / 2.0
+    expanded_cx = (ex1 + ex2) / 2.0
+    expanded_cy = (ey1 + ey2) / 2.0
+
+    theta_expanded = theta_tight.clone()
+    theta_expanded[:, 0, :2] *= tight_w / expanded_w
+    theta_expanded[:, 1, :2] *= tight_h / expanded_h
+    theta_expanded[:, 0, 2] = (
+        (tight_cx - expanded_cx) / (expanded_w / 2.0)
+        + theta_tight[:, 0, 2] * tight_w / expanded_w
+    )
+    theta_expanded[:, 1, 2] = (
+        (tight_cy - expanded_cy) / (expanded_h / 2.0)
+        + theta_tight[:, 1, 2] * tight_h / expanded_h
+    )
+
+    expanded_rgb = np.asarray(expanded, dtype=np.float32) / 255.0
+    expanded_source = torch.from_numpy(expanded_rgb.transpose(2, 0, 1))[None].to(device)
+    output_shape = (1, 3, IMAGE_SIZE, IMAGE_SIZE)
+    expanded_grid = F.affine_grid(theta_expanded, output_shape, align_corners=False)
+    corrected = F.grid_sample(
+        expanded_source,
+        expanded_grid,
+        mode="bilinear",
+        padding_mode="zeros",
+        align_corners=False,
+    )
+    valid = F.grid_sample(
+        torch.ones((1, 1, expanded_size, expanded_size), dtype=torch.float32, device=device),
+        expanded_grid,
+        mode="bilinear",
+        padding_mode="zeros",
+        align_corners=False,
+    )
+
+    def to_image(tensor: torch.Tensor) -> Image.Image:
+        array = tensor[0].detach().cpu().numpy().transpose(1, 2, 0)
+        return Image.fromarray(np.uint8(np.clip(array, 0, 1) * 255))
+
+    baseline_image = to_image(baseline)
+    corrected_image = to_image(corrected)
+    valid_array = valid[0, 0].detach().cpu().numpy()
+    valid_image = Image.fromarray(np.uint8(np.clip(valid_array, 0, 1) * 255))
     p = params[0].detach().cpu().numpy()
-    return out, {
+    baseline_array = np.asarray(baseline_image)
+    corrected_array = np.asarray(corrected_image)
+    metrics = {
         "angle_deg": float(np.degrees(p[0])),
         "scale": float(p[1]),
         "tx_norm": float(p[2]),
         "ty_norm": float(p[3]),
+        "tight_side_px": tight_w,
+        "expanded_side_px": expanded_w,
+        "baseline_exact_zero_fraction": float(np.all(baseline_array == 0, axis=2).mean()),
+        "corrected_exact_zero_fraction": float(np.all(corrected_array == 0, axis=2).mean()),
+        "corrected_valid_fraction": float((valid_array > 0.999).mean()),
     }
+    return tight, baseline_image, corrected_image, valid_image, metrics
 
 
-def yolo_square_crop(path: Path, model_path: Path, conf: float, device: str, crop_margin: float) -> Image.Image:
-    from ultralytics import YOLO
-
-    import cv2
-
-    img_bgr = cv2.imread(str(path))
-    if img_bgr is None:
-        raise RuntimeError(f"Unable to read image: {path}")
-    result = YOLO(str(model_path)).predict(img_bgr, conf=conf, verbose=False, device=device)[0]
-    boxes = result.boxes.xywh.cpu().numpy()
-    if len(boxes) == 0:
-        raise RuntimeError(f"No YOLO detection: {path}")
-    x_center, y_center, w, h = boxes[0]
-    side = max(float(max(w, h) * crop_margin), float(IMAGE_SIZE))
-    x1 = max(0, int(x_center - side / 2))
-    y1 = max(0, int(y_center - side / 2))
-    x2 = min(img_bgr.shape[1], int(x_center + side / 2))
-    y2 = min(img_bgr.shape[0], int(y_center + side / 2))
-    crop_bgr = cv2.resize(img_bgr[y1:y2, x1:x2], (IMAGE_SIZE, IMAGE_SIZE), interpolation=cv2.INTER_AREA)
-    crop_rgb = cv2.cvtColor(crop_bgr, cv2.COLOR_BGR2RGB)
-    return Image.fromarray(crop_rgb)
-
-
-def default_models_dir() -> Path:
-    return Path(__file__).resolve().parents[1] / "models"
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, required=True, help="Raw image file/folder or already YOLO-cropped image file/folder.")
-    parser.add_argument("--output", type=Path, required=True, help="Output folder for aligned 256x256 RGB PNGs.")
-    parser.add_argument("--models-dir", type=Path, default=default_models_dir())
-    parser.add_argument("--skip-yolo", action="store_true", help="Use input images as 256x256 crops and only apply STN.")
-    parser.add_argument("--conf", type=float, default=0.25)
-    parser.add_argument("--crop-margin", type=float, default=1.0)
-    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
-    parser.add_argument("--yolo-device", default="0" if torch.cuda.is_available() else "cpu")
-    return parser.parse_args()
+def panel(images: list[Image.Image], labels: list[str]) -> Image.Image:
+    label_height = 28
+    canvas = Image.new("RGB", (IMAGE_SIZE * len(images), IMAGE_SIZE + label_height), "white")
+    draw = ImageDraw.Draw(canvas)
+    for index, (img, label) in enumerate(zip(images, labels)):
+        canvas.paste(img.convert("RGB"), (index * IMAGE_SIZE, label_height))
+        draw.text((index * IMAGE_SIZE + 6, 7), label, fill="black")
+    return canvas
 
 
 def main() -> None:
-    args = parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--detector-model",
+        type=Path,
+        default=PACKAGE_ROOT / "models" / "yolo11n_microled_best.pt",
+        help="YOLO checkpoint produced by the detector-training stage.",
+    )
+    parser.add_argument(
+        "--stn-model",
+        type=Path,
+        default=PACKAGE_ROOT / "models" / "luma_spatial_head_stn.pt",
+        help="STN checkpoint produced by the alignment-training stage.",
+    )
+    parser.add_argument(
+        "--selection-root",
+        type=Path,
+        default=None,
+        help="Process only relative paths represented by PNG files under this root.",
+    )
+    parser.add_argument("--margin", type=float, default=1.70)
+    parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--preview-count", type=int, default=12)
+    parser.add_argument(
+        "--min-valid-fraction",
+        type=float,
+        default=0.98,
+        help="Skip an aligned frame when geometric source coverage is lower.",
+    )
+    parser.add_argument("--save-baseline", action="store_true")
+    parser.add_argument(
+        "--early-intensity",
+        action="store_true",
+        help="Convert raw RGB to Rec.709 intensity before both YOLO and STN prediction.",
+    )
+    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    args = parser.parse_args()
+    if args.margin < 1.0:
+        parser.error("--margin must be at least 1.0.")
+    if not 0.0 <= args.min_valid_fraction <= 1.0:
+        parser.error("--min-valid-fraction must be within [0, 1].")
+
+    from ultralytics import YOLO
+
+    if args.device == "cpu" or not torch.cuda.is_available():
+        # The packaged torchvision build can lack its compiled CPU NMS kernel.
+        # Ultralytics still supplies all filtering/class logic; only the final
+        # mathematically equivalent suppression primitive is replaced.
+        import torchvision
+
+        torchvision.ops.nms = _pure_torch_nms
+
+    if args.selection_root is not None:
+        selected = sorted(args.selection_root.rglob("*.png"))
+        paths = [args.input / path.relative_to(args.selection_root).with_suffix(".jpg") for path in selected]
+        missing = [path for path in paths if not path.is_file()]
+        if missing:
+            raise FileNotFoundError(f"Missing {len(missing)} selected raw images; first: {missing[0]}")
+    else:
+        paths = [args.input] if args.input.is_file() else sorted(args.input.rglob("*.jpg"))
+    if args.limit:
+        paths = paths[: args.limit]
+    args.output.mkdir(parents=True, exist_ok=True)
     device = torch.device(args.device if args.device == "cpu" or torch.cuda.is_available() else "cpu")
-    stn = load_stn(args.models_dir / "luma_spatial_head_stn.pt", device)
-    yolo_model = args.models_dir / "yolo11n_microled_best.pt"
-    rows = []
-    for idx, path in enumerate(iter_images(args.input), 1):
-        crop = pil_rgb(path) if args.skip_yolo else yolo_square_crop(path, yolo_model, args.conf, args.yolo_device, args.crop_margin)
-        aligned, info = stn_align_image(stn, crop, device)
-        out_path = relative_output_path(path, args.input, args.output)
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        aligned.save(out_path)
-        rows.append((path, out_path, info))
-        if idx % 100 == 0:
-            print(f"aligned {idx}")
-    print(f"aligned={len(rows)} output={args.output}")
+    detector_device = "0" if device.type == "cuda" else "cpu"
+    if not args.detector_model.is_file():
+        raise FileNotFoundError(f"Detector checkpoint not found: {args.detector_model}")
+    if not args.stn_model.is_file():
+        raise FileNotFoundError(f"STN checkpoint not found: {args.stn_model}")
+    detector = YOLO(str(args.detector_model))
+    stn = load_stn(args.stn_model, device)
+
+    rows: list[dict[str, object]] = []
+    for path in paths:
+        bgr, box = detect_box(path, detector, detector_device, early_intensity=args.early_intensity)
+        tight, baseline, corrected, valid, metrics = align_pair(stn, bgr, box, device, args.margin)
+        relative = path.relative_to(args.input) if args.input.is_dir() else Path(path.name)
+        aligned_path = args.output / "aligned_rgb_256" / relative.with_suffix(".png")
+        valid_path = args.output / "valid_masks_256" / relative.with_suffix(".png")
+        valid_path.parent.mkdir(parents=True, exist_ok=True)
+        valid.save(valid_path)
+        alignment_pass = float(metrics["corrected_valid_fraction"]) >= args.min_valid_fraction
+        metrics["alignment_pass"] = alignment_pass
+        metrics["aligned_path"] = str(aligned_path) if alignment_pass else ""
+        metrics["valid_mask_path"] = str(valid_path)
+        if alignment_pass:
+            aligned_path.parent.mkdir(parents=True, exist_ok=True)
+            corrected.save(aligned_path)
+        if args.save_baseline:
+            baseline_path = args.output / "baseline_zero_pad_rgb_256" / relative.with_suffix(".png")
+            baseline_path.parent.mkdir(parents=True, exist_ok=True)
+            baseline.save(baseline_path)
+        if len(rows) < args.preview_count:
+            stem = f"{path.parent.name}__{path.stem}"
+            preview_root = args.output / "previews"
+            preview_root.mkdir(parents=True, exist_ok=True)
+            tight.save(preview_root / f"{stem}__tight_crop.png")
+            baseline.save(preview_root / f"{stem}__baseline.png")
+            corrected.save(preview_root / f"{stem}__expanded.png")
+            valid.save(preview_root / f"{stem}__valid_mask.png")
+            panel(
+                [tight, baseline, corrected, valid],
+                ["YOLO tight crop", "Current zero-pad", "Expanded real bg", "Valid mask"],
+            ).save(preview_root / f"{stem}__comparison.png")
+        rows.append({"path": str(path), **metrics})
+
+    if not rows:
+        raise SystemExit("No input JPG images were found.")
+    with (args.output / "metrics.csv").open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"processed={len(rows)} output={args.output}")
 
 
 if __name__ == "__main__":

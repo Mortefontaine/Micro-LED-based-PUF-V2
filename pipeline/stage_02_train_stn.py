@@ -30,7 +30,7 @@ def main() -> None:
     run(
         [
             sys.executable,
-            REPO_ROOT / "training" / "microled_train_luma_spatial_head_stn.py",
+            REPO_ROOT / "training" / "train_stn.py",
             "--pair-csv",
             pair_csv,
             "--out-dir",

@@ -46,7 +46,7 @@ def main() -> None:
     run(
         [
             sys.executable,
-            REPO_ROOT / "training" / "microled_train_ultralight_yolo.py",
+            REPO_ROOT / "training" / "train_yolo.py",
             "--data",
             runtime_yaml,
             "--model",

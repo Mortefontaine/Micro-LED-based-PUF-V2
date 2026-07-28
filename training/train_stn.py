@@ -1,10 +1,4 @@
-"""Train a luma-aware spatial-head STN and preserve RGB aligned output.
-
-The previous spatial-head STN predicted a good similarity transform from
-blue-derived features, but the final PUF extractor uses Rec.709 luma. This
-variant aligns the training objective with the final extractor by using luma
-features and luma residual losses while still warping the full RGB crop.
-"""
+"""Train the STN with luma features and RGB-preserving warping."""
 
 from __future__ import annotations
 
@@ -12,6 +6,9 @@ import argparse
 import csv
 import math
 import random
+import sys
+from collections import defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
 
@@ -22,23 +19,170 @@ import torch.nn.functional as F
 from PIL import Image, ImageDraw, ImageFont
 from torch.utils.data import DataLoader, Dataset
 
-from microled_train_cross_aware_rigid_stn import (
-    dark_residual_tensor,
-    parameter_count,
+REPO_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO_ROOT / "code"))
+from microled_stn import (  # noqa: E402
+    IMAGE_SIZE,
+    SpatialHeadSimilaritySTN,
     predictor_features,
     radial_residual_np,
-    radial_residual_patch_tensor,
     sobel_mag_np,
     zscore,
 )
-from microled_train_similarity_stn_256 import IMAGE_SIZE, PairRow, load_pairs, split_pairs, warp_with_theta, zncc
-from microled_train_spatial_head_stn import SpatialHeadSimilaritySTN
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
 PAIR_CSV = REPO_ROOT / "data" / "02_stn_pairs_M1_M6" / "alignment_pairs_M1_M6.csv"
 OUT_DIR = REPO_ROOT / "work" / "luma_spatial_head_stn"
 PREDICTOR_SIZE = 96
+
+
+@dataclass(frozen=True)
+class PairRow:
+    crop_path: Path
+    target_path: Path
+    condition: str
+    frame: str
+
+
+def load_pairs(pair_csv: Path) -> list[PairRow]:
+    rows: list[PairRow] = []
+    with pair_csv.open("r", encoding="utf-8", newline="") as stream:
+        for row in csv.DictReader(stream):
+            if row.get("error"):
+                continue
+            if row.get("crop_relative"):
+                crop_path = pair_csv.parent / row["crop_relative"]
+                target_path = pair_csv.parent / row["target_relative"]
+            else:
+                crop_path = Path(row["crop_path"])
+                target_path = Path(row["target_path"])
+            if crop_path.is_file() and target_path.is_file():
+                rows.append(
+                    PairRow(
+                        crop_path,
+                        target_path,
+                        row["condition"],
+                        row["frame"],
+                    )
+                )
+    return rows
+
+
+def split_pairs(
+    rows: Sequence[PairRow],
+    val_ratio: float,
+    seed: int,
+) -> tuple[list[PairRow], list[PairRow]]:
+    grouped: dict[str, list[PairRow]] = defaultdict(list)
+    for row in rows:
+        grouped[row.condition].append(row)
+    rng = random.Random(seed)
+    train: list[PairRow] = []
+    validation: list[PairRow] = []
+    for items in grouped.values():
+        shuffled = list(items)
+        rng.shuffle(shuffled)
+        count = max(1, int(round(len(shuffled) * val_ratio)))
+        validation.extend(shuffled[:count])
+        train.extend(shuffled[count:])
+    rng.shuffle(train)
+    rng.shuffle(validation)
+    return train, validation
+
+
+def warp_with_theta(
+    image: torch.Tensor,
+    theta: torch.Tensor,
+) -> torch.Tensor:
+    grid = F.affine_grid(theta, image.size(), align_corners=True)
+    return F.grid_sample(
+        image,
+        grid,
+        mode="bilinear",
+        padding_mode="zeros",
+        align_corners=True,
+    )
+
+
+def zncc(left: torch.Tensor, right: torch.Tensor) -> torch.Tensor:
+    left_flat = left.flatten(1)
+    right_flat = right.flatten(1)
+    left_flat = left_flat - left_flat.mean(dim=1, keepdim=True)
+    right_flat = right_flat - right_flat.mean(dim=1, keepdim=True)
+    return (left_flat * right_flat).mean(dim=1) / (
+        left_flat.std(dim=1) * right_flat.std(dim=1) + 1e-6
+    )
+
+
+def radial_residual_patch_tensor(
+    image: torch.Tensor,
+    patch_grid: int = 32,
+) -> torch.Tensor:
+    batch, _, height, width = image.shape
+    yy, xx = torch.meshgrid(
+        torch.arange(height, device=image.device, dtype=torch.float32),
+        torch.arange(width, device=image.device, dtype=torch.float32),
+        indexing="ij",
+    )
+    center = (height - 1) / 2.0
+    bins = torch.floor(
+        torch.sqrt((yy - center).square() + (xx - center).square())
+    ).long().flatten()
+    bin_count = int(bins.max().item()) + 1
+    flat = image[:, 0].flatten(1)
+    sums = torch.zeros(
+        (batch, bin_count),
+        dtype=image.dtype,
+        device=image.device,
+    )
+    sums.scatter_add_(1, bins.expand(batch, -1), flat)
+    counts = torch.bincount(
+        bins,
+        minlength=bin_count,
+    ).to(device=image.device, dtype=image.dtype).clamp_min(1.0)
+    means = sums / counts[None, :]
+    residual = flat - means.gather(1, bins.expand(batch, -1))
+    block = height // patch_grid
+    patches = residual.reshape(
+        batch,
+        patch_grid,
+        block,
+        patch_grid,
+        block,
+    ).mean(dim=(2, 4))
+    return patches.flatten(1)
+
+
+def dark_residual_tensor(image: torch.Tensor) -> torch.Tensor:
+    batch, _, height, width = image.shape
+    yy, xx = torch.meshgrid(
+        torch.arange(height, device=image.device, dtype=torch.float32),
+        torch.arange(width, device=image.device, dtype=torch.float32),
+        indexing="ij",
+    )
+    center = (height - 1) / 2.0
+    bins = torch.floor(
+        torch.sqrt((yy - center).square() + (xx - center).square())
+    ).long().flatten()
+    bin_count = int(bins.max().item()) + 1
+    flat = image[:, 0].flatten(1)
+    sums = torch.zeros(
+        (batch, bin_count),
+        dtype=image.dtype,
+        device=image.device,
+    )
+    sums.scatter_add_(1, bins.expand(batch, -1), flat)
+    counts = torch.bincount(
+        bins,
+        minlength=bin_count,
+    ).to(device=image.device, dtype=image.dtype).clamp_min(1.0)
+    means = sums / counts[None, :]
+    residual = flat - means.gather(1, bins.expand(batch, -1))
+    return torch.relu(-residual).reshape(batch, 1, height, width)
+
+
+def parameter_count(model: nn.Module) -> int:
+    return sum(parameter.numel() for parameter in model.parameters())
 
 
 def get_font(size: int) -> ImageFont.ImageFont:

@@ -1,4 +1,4 @@
-"""End-to-end M1 enrollment/regeneration smoke test on the compact sample."""
+"""Run one M1 fuzzy-extractor enrollment and reproduction cycle."""
 
 from __future__ import annotations
 

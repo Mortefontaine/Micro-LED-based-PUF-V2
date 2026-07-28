@@ -40,7 +40,7 @@ def main() -> None:
     prepare_stage_dir(stage_dir, args.output_root, args.force)
     command: list[str | Path] = [
         sys.executable,
-        REPO_ROOT / "code" / "microled_expanded_align.py",
+        REPO_ROOT / "code" / "microled_align.py",
         "--input",
         raw_root,
         "--output",

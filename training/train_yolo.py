@@ -1,4 +1,4 @@
-"""Train an ultralight YOLO detector on the micro-LED pseudo-label dataset."""
+"""Train the YOLO detector on the included micro-LED dataset."""
 
 from __future__ import annotations
 
