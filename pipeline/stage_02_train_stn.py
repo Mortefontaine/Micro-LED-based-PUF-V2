@@ -15,6 +15,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--force", action="store_true")
     return parser.parse_args()
@@ -39,6 +40,8 @@ def main() -> None:
             str(args.epochs),
             "--batch-size",
             str(args.batch_size),
+            "--lr",
+            str(args.lr),
             "--device",
             args.device,
             "--predictor-source",
@@ -61,7 +64,12 @@ def main() -> None:
             "training_report": training_root / "luma_spatial_head_stn_report.md",
         },
         {"pair_csv": pair_csv, "initial_model": initial_model},
-        {"epochs": args.epochs, "batch_size": args.batch_size, "device": args.device},
+        {
+            "epochs": args.epochs,
+            "batch_size": args.batch_size,
+            "learning_rate": args.lr,
+            "device": args.device,
+        },
     )
     print(f"Stage manifest: {manifest}")
 

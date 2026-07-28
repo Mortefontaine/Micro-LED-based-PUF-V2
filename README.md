@@ -12,7 +12,11 @@ YOLO training
     -> 128-bit protocol use
 ```
 
-A compact M1-M6 dataset and the required model files are included.
+A compact M1-M6 dataset and the required model files are included. The STN
+subset contains three paired images per device/operating condition. Enrollment
+uses one image from each of the nine current-temperature conditions and
+requires at least 2,048 projection positions to be unanimous across those
+nine images.
 
 ## Output-length convention
 
@@ -39,6 +43,10 @@ is not a reproduction of the publication-scale M1-M9 training, evaluation or
 reported numerical results. Publication reproduction requires the separately
 maintained full dataset, the original training schedule and the complete
 evaluation split.
+
+The compact STN fine-tuning stage uses a learning rate of `1e-4`, matching the
+refinement rate used by the full local workflow. The alignment stage applies
+the same default minimum valid-source fraction of `0.98`.
 
 ## Installation
 
