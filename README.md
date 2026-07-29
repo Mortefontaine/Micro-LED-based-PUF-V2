@@ -8,8 +8,10 @@ YOLO training
     -> raw-image localization and alignment
     -> 2,048-bit PUF response extraction
     -> LDPC fuzzy extraction
-    -> 256-bit derived output
-    -> 128-bit protocol use
+    -> 2,048-bit response reconstruction
+    -> HKDF-SHA256 derivation
+       -> 256-bit root key
+       -> 256-bit device-bound identity seed
 ```
 
 A compact M1-M6 dataset and the required model files are included. The STN
@@ -21,22 +23,17 @@ nine images.
 The source code and included repository materials are released under the
 [MIT License](LICENSE).
 
-## Output-length convention
+## Derived-output convention
 
 The fuzzy-extractor code reconstructs the 2,048-bit enrolled response and then
-uses HKDF-SHA256 to derive 32-byte outputs:
+uses two domain-separated HKDF-SHA256 invocations to derive 32-byte outputs:
 
 - `derive_root_key(...)` returns 256 bits;
 - `derive_identity_seed(...)` returns a separate 256-bit, device-ID-bound
   value.
 
-Accordingly, the Python implementation should be described as producing a
-256-bit derived output. The communication protocol described with this method
-uses 128 identity-bound bits from the derived material. The 128-bit value is
-the protocol input length, not the direct output length of the fuzzy-extractor
-function. This distinction is also recorded by Stage 4 as
-`derived_key_bits = 256` and
-`identity_bound_output_bits_used_by_protocol = 128`.
+No truncation is applied to either output. Stage 4 records both output lengths
+as `root_key_bits = 256` and `identity_seed_bits = 256`.
 
 ## Scope of the compact demo
 
@@ -85,7 +82,7 @@ These are all Python files retained in the repository.
 | `code/microled_align.py` | Loads YOLO and STN checkpoints, localizes each micro-LED image and writes aligned 256 x 256 RGB images. |
 | `code/microled_puf.py` | Converts aligned images into features and evaluates the fixed projection bank. |
 | `code/microled_prepare_stability_only_profile.py` | Creates the ordered candidate-position profile used during enrollment. |
-| `code/microled_fuzzy_extractor.py` | Selects 2,048 device-local positions, performs LDPC decoding and derives 256-bit outputs; the surrounding protocol uses 128 identity-bound bits. This is the only fuzzy-extractor implementation. |
+| `code/microled_fuzzy_extractor.py` | Selects 2,048 device-local positions, performs LDPC decoding and derives separate 256-bit root-key and device-bound identity-seed outputs. This is the only fuzzy-extractor implementation. |
 | `pipeline/common.py` | Reads and writes stage manifests and passes file paths between stages. |
 | `pipeline/stage_01_train_yolo.py` | Runs YOLO training and records the detector checkpoint. |
 | `pipeline/stage_02_train_stn.py` | Runs STN training and records the STN checkpoint. |

@@ -29,6 +29,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    args.output_root = args.output_root.resolve()
     args.output_root.mkdir(parents=True, exist_ok=True)
     force = ["--force"] if args.force else []
     run(

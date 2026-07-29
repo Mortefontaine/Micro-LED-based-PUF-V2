@@ -53,6 +53,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def main() -> None:
     args = parse_args()
+    args.output_root = args.output_root.resolve()
     alignment_manifest = args.alignment_manifest or args.output_root / "03_alignment" / "stage_manifest.json"
     detector_manifest = args.detector_manifest or args.output_root / "01_yolo" / "stage_manifest.json"
     stn_manifest = args.stn_manifest or args.output_root / "02_stn" / "stage_manifest.json"
@@ -136,8 +137,8 @@ def main() -> None:
         "accepted_probes": accepted_total,
         "acceptance_rate_percent": 100.0 * accepted_total / len(probe_rows),
         "response_bits": 2048,
-        "derived_key_bits": 256,
-        "identity_bound_output_bits_used_by_protocol": 128,
+        "root_key_bits": 256,
+        "identity_seed_bits": 256,
         "quality_corr_min": args.quality_corr_min,
         "selection_rule": "within_device_stability_only",
         "sample_selection_requires_unanimous_enrollment_bits": True,

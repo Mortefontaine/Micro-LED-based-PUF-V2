@@ -23,6 +23,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    args.output_root = args.output_root.resolve()
     stage_dir = args.output_root / "01_yolo"
     prepare_stage_dir(stage_dir, args.output_root, args.force)
     data_yaml = REPO_ROOT / "data" / "01_yolo_detector_sample" / "microled.yaml"

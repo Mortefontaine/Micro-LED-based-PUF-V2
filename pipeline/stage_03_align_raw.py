@@ -31,6 +31,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    args.output_root = args.output_root.resolve()
     detector_manifest = args.detector_manifest or args.output_root / "01_yolo" / "stage_manifest.json"
     stn_manifest = args.stn_manifest or args.output_root / "02_stn" / "stage_manifest.json"
     detector = read_artifact(detector_manifest, "detector_model")

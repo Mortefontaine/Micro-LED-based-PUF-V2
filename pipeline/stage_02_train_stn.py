@@ -23,6 +23,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    args.output_root = args.output_root.resolve()
     stage_dir = args.output_root / "02_stn"
     prepare_stage_dir(stage_dir, args.output_root, args.force)
     pair_csv = REPO_ROOT / "data" / "02_stn_pairs_M1_M6" / "alignment_pairs_M1_M6.csv"
