@@ -6,4 +6,5 @@ authors:
   - name: "Authors of the associated manuscript"
 version: "stability-only-reviewer-release-1"
 date-released: 2026-07-28
-abstract: "Code, frozen artifacts, compact M1-M6 sample data, and M1-M9 result tables for a micro-LED optical weak-PUF pipeline whose enrollment does not use inter-device Hamming distance."
+license: MIT
+abstract: "Executable code, required model artifacts, and compact M1-M6 sample data for a micro-LED optical weak-PUF pipeline whose enrollment does not use inter-device Hamming distance."

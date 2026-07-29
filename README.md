@@ -18,6 +18,9 @@ uses one image from each of the nine current-temperature conditions and
 requires at least 2,048 projection positions to be unanimous across those
 nine images.
 
+The source code and included repository materials are released under the
+[MIT License](LICENSE).
+
 ## Output-length convention
 
 The fuzzy-extractor code reconstructs the 2,048-bit enrolled response and then
@@ -58,6 +61,9 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
+
+The pinned package versions are the versions used for the clean-environment
+validation of this compact release with Python 3.11.
 
 ## Run the complete example
 
