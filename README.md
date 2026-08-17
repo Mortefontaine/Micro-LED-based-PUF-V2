@@ -7,7 +7,8 @@ YOLO training
     -> STN training
     -> raw-image localization and alignment
     -> 2,048-bit PUF response extraction
-    -> LDPC fuzzy extraction
+    -> first-pass LDPC reconstruction (no pose refinement)
+       -> if unsuccessful: one pose-refinement retry
     -> 2,048-bit response reconstruction
     -> HKDF-SHA256 derivation
        -> 256-bit root key
@@ -35,6 +36,15 @@ uses two domain-separated HKDF-SHA256 invocations to derive 32-byte outputs:
 No truncation is applied to either output. Stage 4 records both output lengths
 as `root_key_bits = 256` and `identity_seed_bits = 256`.
 
+## Failure-triggered pose retry
+
+Enrollment and every first-pass probe use the STN-normalized image directly;
+pose refinement is disabled on this path. If first-pass reconstruction is
+unsuccessful, the same image may undergo one common-template pose search and
+one additional reconstruction attempt. Stage 4 records first-pass acceptance,
+retry attempts and retry recovery in separate fields. Its primary acceptance
+metric contains first-pass results only.
+
 ## Scope of the compact demo
 
 The included M1-M6 data and one-epoch defaults are provided to execute every
@@ -45,7 +55,7 @@ maintained full dataset, the original training schedule and the complete
 evaluation split.
 
 The compact STN fine-tuning stage uses a learning rate of `1e-4`, matching the
-refinement rate used by the full local workflow. The alignment stage applies
+STN training rate used by the full local workflow. The alignment stage applies
 the same default minimum valid-source fraction of `0.98`.
 
 ## Installation

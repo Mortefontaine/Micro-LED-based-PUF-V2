@@ -26,6 +26,7 @@ from microled_fuzzy_extractor import (  # noqa: E402
     enroll_single_shot,
     enrollment_response_rows,
     payload_digest,
+    quality_gated_single_image_row,
     reproduce_single_shot,
     select_per_condition,
 )
@@ -96,23 +97,52 @@ def main() -> None:
         if loaded.payload_sha256 != payload_digest(payload):
             raise RuntimeError(f"{device} manifest payload digest mismatch")
         probes = [row for row in all_rows if str(Path(row["path"]).resolve()) not in selected_paths]
-        accepted = 0
+        first_pass_accepted = 0
+        accepted_after_retry = 0
+        retry_attempts = 0
+        rescued = 0
         for row in probes:
             result = reproduce_single_shot(loaded, row)
-            accepted += int(bool(result["accepted"]))
+            first_success = bool(result["accepted"])
+            retry_result = None
+            retry_row = None
+            if not first_success:
+                retry_attempts += 1
+                retry_row = quality_gated_single_image_row(
+                    Path(str(row["path"])),
+                    payload,
+                    loaded.quality_template_corr_min,
+                    loaded.candidate_indices,
+                    pose_mode="forced",
+                )
+                retry_result = reproduce_single_shot(loaded, retry_row)
+            retry_success = bool(retry_result["accepted"]) if retry_result is not None else False
+            final_success = first_success or retry_success
+            final_result = retry_result if retry_result is not None else result
+            first_pass_accepted += int(first_success)
+            accepted_after_retry += int(final_success)
+            rescued += int(retry_success)
             probe_rows.append(
                 {
                     "device": device,
                     "condition": row["condition"],
                     "image": Path(row["path"]).relative_to(aligned_root).as_posix(),
-                    "accepted": int(bool(result["accepted"])),
+                    "first_pass_accepted": int(first_success),
+                    "pose_retry_attempted": int(retry_result is not None),
+                    "pose_retry_refined": int(bool(retry_row.get("pose_refined", False))) if retry_row is not None else 0,
+                    "pose_retry_accepted": int(retry_success),
+                    "accepted_after_optional_retry": int(final_success),
                     "failure_stage": result["failure_stage"] or "",
+                    "pose_retry_failure_stage": (
+                        "" if retry_result is None or retry_result["failure_stage"] is None
+                        else retry_result["failure_stage"]
+                    ),
                     "decoder_converged": int(bool(result["decoder_converged"])),
                     "estimated_error_weight": (
                         "" if result["estimated_error_weight"] is None else result["estimated_error_weight"]
                     ),
                     "quality_template_corr": result["quality_template_corr"],
-                    "key_id": result["key_id"] or "",
+                    "key_id": final_result["key_id"] or "",
                 }
             )
         total_enrollment += len(selected)
@@ -121,21 +151,33 @@ def main() -> None:
                 "device": device,
                 "enrollment_images": len(selected),
                 "independent_probes": len(probes),
-                "accepted": accepted,
-                "acceptance_rate_percent": 100.0 * accepted / len(probes) if probes else 0.0,
+                "first_pass_accepted": first_pass_accepted,
+                "first_pass_acceptance_rate_percent": 100.0 * first_pass_accepted / len(probes) if probes else 0.0,
+                "pose_retry_attempts": retry_attempts,
+                "rescued_by_pose_retry": rescued,
+                "accepted_after_optional_retry": accepted_after_retry,
+                "acceptance_rate_after_optional_retry_percent": 100.0 * accepted_after_retry / len(probes) if probes else 0.0,
                 "identity_seed_id": manifest.identity_seed_id,
             }
         )
 
     write_csv(stage_dir / "per_probe_results.csv", probe_rows)
     write_csv(stage_dir / "per_device_results.csv", device_rows)
-    accepted_total = sum(int(row["accepted"]) for row in probe_rows)
+    first_pass_total = sum(int(row["first_pass_accepted"]) for row in probe_rows)
+    retry_attempts_total = sum(int(row["pose_retry_attempted"]) for row in probe_rows)
+    rescued_total = sum(int(row["pose_retry_accepted"]) for row in probe_rows)
+    final_total = sum(int(row["accepted_after_optional_retry"]) for row in probe_rows)
     summary = {
         "devices": 6,
         "enrollment_images": total_enrollment,
         "independent_probes": len(probe_rows),
-        "accepted_probes": accepted_total,
-        "acceptance_rate_percent": 100.0 * accepted_total / len(probe_rows),
+        "first_pass_accepted_probes": first_pass_total,
+        "first_pass_acceptance_rate_percent": 100.0 * first_pass_total / len(probe_rows),
+        "pose_retry_attempts": retry_attempts_total,
+        "rescued_by_pose_retry": rescued_total,
+        "accepted_after_optional_retry": final_total,
+        "acceptance_rate_after_optional_retry_percent": 100.0 * final_total / len(probe_rows),
+        "primary_metrics_include_pose_retry": False,
         "response_bits": 2048,
         "root_key_bits": 256,
         "identity_seed_bits": 256,

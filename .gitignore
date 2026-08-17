@@ -12,5 +12,6 @@ local_state/
 *.pfx
 *.secret
 private_audit/
+validation/
 .DS_Store
 Thumbs.db
