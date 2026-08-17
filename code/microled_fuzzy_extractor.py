@@ -81,13 +81,14 @@ def payload_digest(path: Path) -> str:
 def response_rows(
     input_path: Path,
     payload_path: Path,
+    pose_mode: str = "disabled",
 ) -> list[dict[str, Any]]:
     extractor = PUFExtractor.from_payload(payload_path)
     root = input_path if input_path.is_dir() else input_path.parent
     rows: list[dict[str, Any]] = []
     for path in iter_images(input_path):
         rgb = read_rgb01(path)
-        feature, pose = extractor.feature_and_pose_from_rgb(rgb)
+        feature, pose = extractor.feature_and_pose_from_rgb(rgb, pose_mode=pose_mode)
         margins = extractor.candidate_margins_from_feature(feature)
         rows.append(
             {
@@ -735,7 +736,7 @@ def default_models_dir() -> Path:
 
 
 def enrollment_response_rows(input_path: Path, payload_path: Path, source_device: str | None) -> list[dict[str, Any]]:
-    """Extract only the requested device when a population root is supplied."""
+    """Extract no-pose enrollment responses for the requested device."""
     if source_device and input_path.is_dir():
         condition_dirs = [
             path
@@ -745,9 +746,9 @@ def enrollment_response_rows(input_path: Path, payload_path: Path, source_device
         if condition_dirs:
             rows: list[dict[str, Any]] = []
             for condition_dir in sorted(condition_dirs):
-                rows.extend(response_rows(condition_dir, payload_path))
+                rows.extend(response_rows(condition_dir, payload_path, pose_mode="disabled"))
             return rows
-    return response_rows(input_path, payload_path)
+    return response_rows(input_path, payload_path, pose_mode="disabled")
 
 
 def quality_gated_single_image_row(
@@ -755,14 +756,15 @@ def quality_gated_single_image_row(
     payload_path: Path,
     threshold: float,
     candidate_indices: Sequence[int],
+    pose_mode: str = "disabled",
 ) -> dict[str, Any]:
-    """Run structural quality scoring before evaluating sparse-projection bits."""
+    """Extract one image in the primary or failure-triggered retry mode."""
     paths = iter_images(input_path)
     if len(paths) != 1:
         raise ValueError(f"Single-shot reproduction requires exactly one image, got {len(paths)}.")
     path = paths[0]
     extractor = PUFExtractor.from_payload(payload_path)
-    feature, pose = extractor.feature_and_pose_from_rgb(read_rgb01(path))
+    feature, pose = extractor.feature_and_pose_from_rgb(read_rgb01(path), pose_mode=pose_mode)
     quality_corr = extractor.common_template_correlation(feature)
     row: dict[str, Any] = {
         "path": str(path),
@@ -806,6 +808,11 @@ def parse_args() -> argparse.Namespace:
     reproduce_cmd.add_argument("--allow-unsigned-manifest", action="store_true")
     reproduce_cmd.add_argument("--max-iterations", type=int, default=40)
     reproduce_cmd.add_argument("--decoder-alpha", type=float, default=0.80)
+    reproduce_cmd.add_argument(
+        "--disable-pose-retry",
+        action="store_true",
+        help="Return the canonical first-pass result without the optional one-time pose-refinement retry.",
+    )
     reproduce_cmd.add_argument("--show-root-key", action="store_true")
 
     init_cmd = sub.add_parser(
@@ -893,13 +900,40 @@ def main() -> None:
         args.payload,
         manifest.quality_template_corr_min,
         manifest.candidate_indices,
+        pose_mode="disabled",
     )
-    result = reproduce_single_shot(
+    first_pass = reproduce_single_shot(
         manifest,
         row,
         max_iterations=args.max_iterations,
         decoder_alpha=args.decoder_alpha,
     )
+    retry_result = None
+    retry_row = None
+    if not first_pass["accepted"] and not args.disable_pose_retry:
+        retry_row = quality_gated_single_image_row(
+            args.input,
+            args.payload,
+            manifest.quality_template_corr_min,
+            manifest.candidate_indices,
+            pose_mode="forced",
+        )
+        retry_result = reproduce_single_shot(
+            manifest,
+            retry_row,
+            max_iterations=args.max_iterations,
+            decoder_alpha=args.decoder_alpha,
+        )
+    final = retry_result if retry_result is not None else first_pass
+    result = {
+        **final,
+        "first_pass_accepted": bool(first_pass["accepted"]),
+        "first_pass_failure_stage": first_pass["failure_stage"],
+        "pose_retry_attempted": retry_result is not None,
+        "pose_retry_refined": bool(retry_row.get("pose_refined", False)) if retry_row is not None else False,
+        "pose_retry_accepted": bool(retry_result["accepted"]) if retry_result is not None else False,
+        "accepted_after_optional_retry": bool(final["accepted"]),
+    }
     if not args.show_root_key:
         result.pop("root_key_b64", None)
     print(json.dumps(result, indent=2))

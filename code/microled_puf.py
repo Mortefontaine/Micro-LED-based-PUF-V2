@@ -165,7 +165,8 @@ class PUFExtractor:
         )
 
     def feature_from_rgb(self, rgb: np.ndarray) -> np.ndarray:
-        prepared, _ = self.prepare_rgb(rgb)
+        """Extract the canonical first-pass feature without pose refinement."""
+        prepared, _ = self.prepare_rgb(rgb, pose_mode="disabled")
         return self.feature_from_prepared_rgb(prepared)
 
     def feature_from_prepared_rgb(self, rgb: np.ndarray) -> np.ndarray:
@@ -173,19 +174,34 @@ class PUFExtractor:
         y = rec709_luma(rgb)
         return radial_residual_patch(y, radial_bins, radial_counts)
 
-    def prepare_rgb(self, rgb: np.ndarray) -> tuple[np.ndarray, dict[str, object]]:
+    def prepare_rgb(
+        self,
+        rgb: np.ndarray,
+        pose_mode: str = "disabled",
+    ) -> tuple[np.ndarray, dict[str, object]]:
+        """Use no pose correction first; allow one explicit failure retry."""
+        if pose_mode not in {"disabled", "forced", "triggered"}:
+            raise ValueError(f"Unsupported pose mode: {pose_mode}")
         default = {
             "pose_initial_corr": None, "pose_final_corr": None, "pose_refined": False,
             "pose_attempted": False,
             "pose_gate_passed": True, "pose_angle_deg": 0.0, "pose_scale": 1.0,
             "pose_tx32": 0.0, "pose_ty32": 0.0,
         }
-        if self.pose_template_luma32 is None or self.pose_trigger_corr is None:
+        if self.pose_template_luma32 is None:
             return rgb, default
         initial_feature = self.feature_from_prepared_rgb(rgb)
         initial = self.common_template_correlation(initial_feature)
-        if np.isfinite(initial) and initial >= self.pose_trigger_corr:
-            return rgb, {**default, "pose_initial_corr": initial, "pose_final_corr": initial}
+        initial_state = {**default, "pose_initial_corr": initial, "pose_final_corr": initial}
+        if pose_mode == "disabled":
+            return rgb, initial_state
+        if (
+            pose_mode == "triggered"
+            and self.pose_trigger_corr is not None
+            and np.isfinite(initial)
+            and initial >= self.pose_trigger_corr
+        ):
+            return rgb, initial_state
         observed = pose_feature_from_rgb(rgb)
         pose = search_pose_correction(observed, self.pose_template_luma32)
         corrected = apply_pose_correction(rgb, pose)
@@ -215,8 +231,12 @@ class PUFExtractor:
             "pose_ty32": pose["ty32"],
         }
 
-    def feature_and_pose_from_rgb(self, rgb: np.ndarray) -> tuple[np.ndarray, dict[str, object]]:
-        prepared, pose = self.prepare_rgb(rgb)
+    def feature_and_pose_from_rgb(
+        self,
+        rgb: np.ndarray,
+        pose_mode: str = "disabled",
+    ) -> tuple[np.ndarray, dict[str, object]]:
+        prepared, pose = self.prepare_rgb(rgb, pose_mode=pose_mode)
         return self.feature_from_prepared_rgb(prepared), pose
 
     def common_template_correlation(self, feature: np.ndarray) -> float:

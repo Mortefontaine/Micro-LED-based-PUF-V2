@@ -4,7 +4,7 @@ title: "Micro-LED optical PUF with device-local stability-only enrollment"
 type: software
 authors:
   - name: "Authors of the associated manuscript"
-version: "stability-only-reviewer-release-1"
-date-released: 2026-07-28
+version: "v8-release"
+date-released: 2026-08-17
 license: MIT
-abstract: "Executable code, required model artifacts, and compact M1-M6 sample data for a micro-LED optical weak-PUF pipeline whose enrollment does not use inter-device Hamming distance."
+abstract: "Executable code, required model artifacts, and compact M1-M6 sample data for a micro-LED optical weak-PUF pipeline with device-local stability-only enrollment, canonical first-pass reconstruction and a single failure-triggered pose-refinement retry."
